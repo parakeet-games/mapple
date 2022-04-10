@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import './Main.css';
 import GameView from './GameView';
 import { ReactComponent as Continents } from './resource/continents-map.svg';
 
