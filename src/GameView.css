@@ -17,6 +17,12 @@ div.GameView {
     height: min-content;
 }
 
+.GameView-boxes {
+    width: 50%;
+    height: 42rem;
+    margin: auto;
+}
+
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
         animation: App-logo-spin infinite 20s linear;
@@ -26,38 +32,4 @@ div.GameView {
 .continents-map {
     width: 50%;
     height: 50%;
-}
-
-.GameView-boxes {
-    width: 50%;
-    height: 42rem;
-    margin: auto;
-}
-
-@media (max-width: 1100px) {
-    .GameView-boxes {
-        width: 100%;
-        padding: auto 100px;
-    }
-}
-
-.GameView-box {
-    font-size: 3rem;
-    text-transform: uppercase;
-    font-weight: 800;
-    text-align: center;
-    border-radius: 1rem;
-    padding: 1rem;
-    margin: 1.5rem auto;
-    box-sizing: border-box;
-}
-
-.GameView-box-yes {
-    background: var(--guessbg-yes);
-    color: var(--guessfg-yes);
-}
-
-.GameView-box-no {
-    background: var(--guessbg-no);
-    color: var(--guessfg-no);
 }

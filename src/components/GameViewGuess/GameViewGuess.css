@@ -1,0 +1,37 @@
+@media (max-width: 1100px) {
+    .GameView-boxes {
+        width: 100%;
+        padding: auto 100px;
+    }
+}
+
+.GameView-box {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1.5rem auto;
+    box-sizing: border-box;
+}
+
+/* Prevents newline from showing up when typed */
+.GameView-box > div {
+    display: inline-block;
+}
+
+.GameView-box-yes {
+    background: var(--guessbg-yes);
+    color: var(--guessfg-yes);
+}
+
+.GameView-box-no {
+    background: var(--guessbg-no);
+    color: var(--guessfg-no);
+}
+
+.GameView-box-guess {
+    border: 0.18em solid var(--guessfg-guess);
+    color: var(--guessfg-guess);
+}
