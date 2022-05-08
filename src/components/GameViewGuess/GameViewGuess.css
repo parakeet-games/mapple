@@ -11,13 +11,17 @@
     font-weight: 800;
     text-align: center;
     border-radius: 1rem;
-    padding: 1rem;
+    padding: 1.25rem;
     margin: 1.5rem auto;
     box-sizing: border-box;
+    height: 6rem;
+    font-family: Lexend, sans-serif;
 }
 
+
 /* Prevents newline from showing up when typed */
-.GameView-box > div {
+
+.GameView-box>div {
     display: inline-block;
 }
 
@@ -32,6 +36,17 @@
 }
 
 .GameView-box-guess {
-    border: 0.18em solid var(--guessfg-guess);
+    font-family: Lexend, sans-serif;
+    border: 0.44rem solid var(--guessfg-guess);
     color: var(--guessfg-guess);
+    padding: 0.72rem;
+    transition: all 100ms;
+}
+
+.GameView-box-guess:focus {
+    outline: none;
+    outline-width: none;
+    border-color: var(--guessfg-guessfocus);
+    color: var(--guessfg-guessfocus);
+    transition: all 100ms;
 }

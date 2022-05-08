@@ -1,7 +1,8 @@
 :root {
-	--guessbg-yes: #0070f0;
-	--guessfg-yes: #fff;
-	--guessbg-no: #b5cfe8;
-	--guessfg-no: #507191;
-	--guessfg-guess: #2984a8;
+    --guessbg-yes: #0070f0;
+    --guessfg-yes: #fff;
+    --guessbg-no: #b5cfe8;
+    --guessfg-no: #507191;
+    --guessfg-guess: #2984a8;
+    --guessfg-guessfocus: #229DCE;
 }

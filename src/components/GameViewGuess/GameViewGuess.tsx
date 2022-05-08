@@ -15,8 +15,24 @@ function GameViewGuess(props: GameViewGuessProps) {
             <div className="GameView-box GameView-box-yes"><span>{props.content}</span></div>
         )
     } else if (props.guess) {
+        // var ce = document.querySelector('[contenteditable]')
+        // ce.addEventListener('paste', function (e) {
+        //     e.preventDefault()
+        //     var text = e.clipboardData.getData('text/plain')
+        //     document.execCommand('insertText', false, text)
+        // })
+        
         return (
-            <div className="GameView-box GameView-box-guess" contentEditable><span>{props.content}</span></div>
+            <div className="GameView-box GameView-box-guess" onKeyPress={
+                (e)=>{
+                    if (e.key == "Enter") {
+                        e.preventDefault()
+
+                        var X = document.querySelector('.GameView-box-guess')
+                        if (X != null) X.className.replace(/GameView-box-guess/g, 'GameView-box-wrong')
+                    }
+                }
+            } contentEditable><span>{props.content}</span></div>
         )
     } else {
         return (

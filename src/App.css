@@ -29,6 +29,10 @@
     color: white;
 }
 
+h1 {
+    font-weight: 700;
+}
+
 .App-link {
     color: #61dafb;
 }
