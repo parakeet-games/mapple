@@ -2,10 +2,11 @@ import React from 'react';
 import './GameViewGuess.css';
 import '../../GameView.css';
 import '../../Main.css';
+import GameView from '../../GameView';
 
 interface GameViewGuessProps {
     content: string
-    guess?: boolean
+    guess?: string
     correct?: boolean
 }
 
@@ -21,15 +22,20 @@ function GameViewGuess(props: GameViewGuessProps) {
         //     var text = e.clipboardData.getData('text/plain')
         //     document.execCommand('insertText', false, text)
         // })
-        
+
         return (
             <div className="GameView-box GameView-box-guess" onKeyPress={
-                (e)=>{
+                (e) => {
                     if (e.key == "Enter") {
                         e.preventDefault()
+                        var guessbox = document.querySelector('.GameView-box-guess')
 
-                        var X = document.querySelector('.GameView-box-guess')
-                        if (X != null) X.className.replace(/GameView-box-guess/g, 'GameView-box-wrong')
+                        if (guessbox != null && props.guess != null && guessbox.textContent != null) {
+                            if (props.guess.toLowerCase() == guessbox.textContent.toLowerCase()) guessbox.className = guessbox.className.replace(/GameView-box-guess/g, 'GameView-box-yes')
+                             else guessbox.className = guessbox.className.replace(/GameView-box-guess/g, 'GameView-box-no')
+                            guessbox?.setAttribute('contentEditable', 'false')
+                            guessbox?.setAttribute('onKeyPress', '')
+                        }
                     }
                 }
             } contentEditable><span>{props.content}</span></div>

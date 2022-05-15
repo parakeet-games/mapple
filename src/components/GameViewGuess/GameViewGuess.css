@@ -21,6 +21,11 @@
 
 /* Prevents newline from showing up when typed */
 
+.GameView-box:focus {
+    outline: none;
+    outline-width: none;
+}
+
 .GameView-box>div {
     display: inline-block;
 }
@@ -44,9 +49,10 @@
 }
 
 .GameView-box-guess:focus {
-    outline: none;
-    outline-width: none;
     border-color: var(--guessfg-guessfocus);
     color: var(--guessfg-guessfocus);
+
+    padding: 0.645rem;
+    font-size: 3.15rem;
     transition: all 100ms;
 }

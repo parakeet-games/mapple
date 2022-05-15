@@ -11,12 +11,10 @@ function GameView() {
 	return (
 		<div className="GameView">
 			<header className="GameView-header">
+				{Date.now()}
 			</header>
 			<section className="GameView-boxes">
-				<GameViewGuess content="type a guess" />
-				<GameViewGuess content="type a guess" />
-				<GameViewGuess content="type a guess" guess />
-				<GameViewGuess content="type a guess" correct />
+				<GameViewGuess content="type a guess" guess={correctGuess} />
 			</section>
 		</div>
 
