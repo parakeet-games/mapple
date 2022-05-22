@@ -5,13 +5,12 @@ import './Main.css';
 import GameViewGuess from './components/GameViewGuess/GameViewGuess';
 
 const guess = ['', '', '', '', '', '']
-const correctGuess = 'united kingdom'
+const correctGuess = 'india'
 
 function GameView() {
 	return (
 		<div className="GameView">
 			<header className="GameView-header">
-				{Date.now()}
 			</header>
 			<section className="GameView-boxes">
 				<GameViewGuess content="type a guess" guess={correctGuess} />
