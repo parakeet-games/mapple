@@ -10,15 +10,15 @@ interface GameViewGuessProps {
     correct?: boolean
 }
 
-function GameViewGuess(props: GameViewGuessProps) {
-    return useGetGuessGuess(props)
-    if (props.correct) {
-        return getGuessCorrect(props)
-    } else if (props.guess) {
-    } else {
-        return getGuessWrong(props)
-    }
-}
+// function GameViewGuess(props: GameViewGuessProps) {
+//     return useGetGuessGuess(props)
+//     if (props.correct) {
+//         return getGuessCorrect(props)
+//     } else if (props.guess) {
+//     } else {
+//         return getGuessWrong(props)
+//     }
+// }
 
 function getGuessCorrect(props: GameViewGuessProps) {
     return (
@@ -26,16 +26,13 @@ function getGuessCorrect(props: GameViewGuessProps) {
     )
 }
 
-export const useGetGuessGuess = (props: GameViewGuessProps) => {
+export const GameViewGuess = (props: GameViewGuessProps): JSX.Element  => {
     const [correct, setCorrect] = useState(true);
     const items: JSX.Element[] = []
 
     useEffect(()=>{
-        if(correct){
-            items.push(<div>hello</div>)
-            setCorrect(false);
-        }
-    })
+       
+    },[])
 
     const onAnswer = (e: React.KeyboardEvent<HTMLDivElement>) => {
         if (e.key == "Enter") {
@@ -43,13 +40,21 @@ export const useGetGuessGuess = (props: GameViewGuessProps) => {
             var guessbox = document.querySelector('.GameView-box-guess')
   
             setCorrect(props.guess!.toLowerCase() == guessbox!.textContent!.toLowerCase())
-        }
+            // fetch('https://example.com').then(e=>{
+            //     alert(e)
+            // })
+            
+            if(correct){
+                items.push(<div>hello</div>)
+                setCorrect(true);
+            }
+        } 
     }
-
-    return (
-        correct ? <div className="GameView-box GameView-box-guess" onKeyPress={onAnswer} contentEditable>{items}<span>{props.content}</span></div> : <div><p>hello</p></div>
-    )
-}
+        return (
+            correct ? <div className="GameView-box GameView-box-guess" onKeyPress={onAnswer} contentEditable>{items}<span>{props.content}</span></div> : <div><p>hello</p></div>
+            )
+        
+    }
 
 function getGuessWrong(props: GameViewGuessProps) {
     return (
@@ -57,4 +62,4 @@ function getGuessWrong(props: GameViewGuessProps) {
     )
 }
 
-export default GameViewGuess;
+export default GameViewGuess
