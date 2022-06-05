@@ -20,46 +20,38 @@ interface GameViewGuessProps {
 //     }
 // }
 
-function getGuessCorrect(props: GameViewGuessProps) {
-    return (
-        <div className="GameView-box GameView-box-yes"><span>{props.content}</span></div>
-    )
-}
-
-export const GameViewGuess = (props: GameViewGuessProps): JSX.Element  => {
-    const [correct, setCorrect] = useState(true);
-    const items: JSX.Element[] = []
-
-    useEffect(()=>{
-       
-    },[])
-
+export const GameViewGuess = (props: GameViewGuessProps): JSX.Element => {
+    const [text, setText] = useState("TYPE HERE!")
     const onAnswer = (e: React.KeyboardEvent<HTMLDivElement>) => {
         if (e.key == "Enter") {
             e.preventDefault()
-            var guessbox = document.querySelector('.GameView-box-guess')
-  
-            setCorrect(props.guess!.toLowerCase() == guessbox!.textContent!.toLowerCase())
-            // fetch('https://example.com').then(e=>{
-            //     alert(e)
-            // })
-            
-            if(correct){
-                items.push(<div>hello</div>)
-                setCorrect(true);
+            var box = e.currentTarget
+
+            if (props.guess!.toLowerCase() === box!.textContent!.toLowerCase().trim()) {
+                box.className = 'GameView-box GameView-box-yes'
+                box.contentEditable = 'false'
+            } else {
+                var nextBox = document.createElement("img")
+                nextBox.src = 'https://i.kym-cdn.com/news_feeds/icons/mobile/000/028/219/e5e.jpg'
+
+                box.className = 'GameView-box GameView-box-no'
+                box.contentEditable = 'false'
+
+                box.parentNode?.appendChild(nextBox)
             }
-        } 
-    }
-        return (
-            correct ? <div className="GameView-box GameView-box-guess" onKeyPress={onAnswer} contentEditable>{items}<span>{props.content}</span></div> : <div><p>hello</p></div>
-            )
-        
+        }
     }
 
-function getGuessWrong(props: GameViewGuessProps) {
+    const onFocus = (e : React.FocusEvent<HTMLDivElement>) => {
+        var boxspan = e.currentTarget.firstChild
+        setInterval((box) => {
+            setText(text.substring(0,text.length-1))
+        },200)
+    }
     return (
-        <div className="GameView-box GameView-box-no"><span>{props.content}</span></div>
+        <div className="GameView-box GameView-box-guess" onKeyDown={onAnswer} onFocus={onFocus} contentEditable><span>{text}</span></div>
     )
+
 }
 
 export default GameViewGuess
