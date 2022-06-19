@@ -8,6 +8,7 @@ interface GameViewGuessProps {
     content: string
     guess?: string
     correct?: boolean
+    newBox: () => void
 }
 
 // function GameViewGuess(props: GameViewGuessProps) {
@@ -31,22 +32,16 @@ export const GameViewGuess = (props: GameViewGuessProps): JSX.Element => {
                 box.className = 'GameView-box GameView-box-yes'
                 box.contentEditable = 'false'
             } else {
-                var nextBox = document.createElement("img")
-                nextBox.src = 'https://i.kym-cdn.com/news_feeds/icons/mobile/000/028/219/e5e.jpg'
-
                 box.className = 'GameView-box GameView-box-no'
                 box.contentEditable = 'false'
 
-                box.parentNode?.appendChild(nextBox)
+                props.newBox()
             }
         }
     }
 
     const onFocus = (e : React.FocusEvent<HTMLDivElement>) => {
-        var boxspan = e.currentTarget.firstChild
-        setInterval((box) => {
-            setText(text.substring(0,text.length-1))
-        },200)
+        setText('')
     }
     return (
         <div className="GameView-box GameView-box-guess" onKeyDown={onAnswer} onFocus={onFocus} contentEditable><span>{text}</span></div>
