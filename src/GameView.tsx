@@ -4,6 +4,7 @@ import './Main.css';
 
 import GameViewGuess from './components/GameViewGuess/GameViewGuess';
 import { GameViewBoxes } from './components/GameViewBoxes/GameViewBoxes';
+import { MappleKeyboard } from './components/MappleKeyboard/MappleKeyboard';
 
 const guess = ['', '', '', '', '', '']
 const correctGuess = 'india'
@@ -14,6 +15,7 @@ function GameView() {
 			<header className="GameView-header">
 			</header>
 			<GameViewBoxes guess={correctGuess} />
+			<MappleKeyboard />
 		</div>
 
 	);
