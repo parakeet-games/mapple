@@ -4,6 +4,10 @@ import './Main.css';
 import GameView from './GameView';
 import { ReactComponent as Continents } from './resource/continents-map.svg';
 
+declare global {
+  var __GUESS_TEXT__: string;
+}
+
 function App() {
   const [gameStarted, setGameStarted] = useState(false)
 

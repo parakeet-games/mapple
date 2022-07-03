@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import '../../GameView.css';
 import '../../Main.css';
-import GameView from '../../GameView';
 import { GameViewGuess } from "../GameViewGuess/GameViewGuess"
 
 interface GameViewBoxesProps {
@@ -13,6 +12,7 @@ export const GameViewBoxes = (props: GameViewBoxesProps): JSX.Element => {
     const [numBoxes, setNumBoxes] = useState(1)
     const newBox = ()=>{
         setNumBoxes(numBoxes + 1);
+        __GUESS_TEXT__ = ''
     }
     useEffect(()=>{
         const temp = [...boxes];
@@ -22,8 +22,8 @@ export const GameViewBoxes = (props: GameViewBoxesProps): JSX.Element => {
 
         setBoxes(temp)
         setNumBoxes(boxes.length)
-    }, [numBoxes])
-
+    }, [ numBoxes ])
+    console.log("boxes",boxes)
     return (
         <section className="GameView-boxes">
             {boxes}
