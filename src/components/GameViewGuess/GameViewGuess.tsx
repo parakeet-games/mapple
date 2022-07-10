@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import './GameViewGuess.css';
 import '../../GameView.css';
 import '../../Main.css';
+import { state } from '../../service/StateService';
 
 interface GameViewGuessProps {
     content: string
     guess?: string
     correct?: boolean
     newBox: () => void
+    guessText: string
+    setGuessText: Dispatch<SetStateAction<string>>
 }
 
 // function GameViewGuess(props: GameViewGuessProps) {
@@ -19,8 +22,6 @@ interface GameViewGuessProps {
 //         return getGuessWrong(props)
 //     }
 // }
-var guessText = window.__GUESS_TEXT__
-guessText = 'TYPE HERE!'
 
 export const GameViewGuess = (props: GameViewGuessProps): JSX.Element => {
     const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -35,12 +36,13 @@ export const GameViewGuess = (props: GameViewGuessProps): JSX.Element => {
                 props.newBox()
             }
         } else {
-            guessText += e.key
+            props.setGT(props.guessText + e.key)
         }
     }
 
-    const onFocus = (e : React.FocusEvent<HTMLDivElement>) => {
-        guessText = ''
+    const onFocus = (e : React.MouseEvent<HTMLDivElement>) => {
+        console.log(props.guessText)
+        state.num = 5;
     }
     
     // useEffect(()=>{
@@ -53,8 +55,9 @@ export const GameViewGuess = (props: GameViewGuessProps): JSX.Element => {
     //     setNumBoxes(boxes.length)
     // }, [ numBoxes ])
 
+
     return (
-        <div className="GameView-box GameView-box-guess" onKeyDown={onKeyDown} onFocus={onFocus}><span>{window.__GUESS_TEXT__}</span></div>
+        <div className="GameView-box GameView-box-guess" onKeyDown={onKeyDown} onClick={onFocus}><span>{props.guessText}</span></div>
     )
 
 }

@@ -1,24 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component, Dispatch, SetStateAction } from 'react';
 import Keyboard from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
+import { state } from '../../service/StateService';
+interface Props {
+  onChange: (e: any)=> void
+  onKeyPress: (e: any)=> void
+  guessText: string
+  setGuessText: Dispatch<SetStateAction<string>>
+}
 
-export class MappleKeyboard extends Component {
-  onChange = (input: any) => {
-    window.__GUESS_TEXT__ = input
-    console.log("Input changed", window.__GUESS_TEXT__);
-    // document.querySelector('.GameView-box-guess > span')!.textContent = input
-  }
+export const MappleKeyboard = (props: Props)=> {
+    const {onChange, onKeyPress} = props;
 
-  onKeyPress = (button : any) => {
-    console.log("Button pressed", button);
-  }
-
-  render(){
     return (
       <Keyboard
-        onChange={this.onChange}
-        onKeyPress={this.onKeyPress}
+        onChange={onChange}
+        onKeyPress={onKeyPress}
       />
     );
-  }
+  
 }
