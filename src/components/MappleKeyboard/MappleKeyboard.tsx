@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import Keyboard from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
 
-var guessText = window.__GUESS_TEXT__
-
 export class MappleKeyboard extends Component {
   onChange = (input: any) => {
-    guessText = input
-    console.log("Input changed", input);
+    window.__GUESS_TEXT__ = input
+    console.log("Input changed", window.__GUESS_TEXT__);
+    // document.querySelector('.GameView-box-guess > span')!.textContent = input
   }
 
   onKeyPress = (button : any) => {

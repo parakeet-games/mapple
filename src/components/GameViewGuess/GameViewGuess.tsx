@@ -42,8 +42,19 @@ export const GameViewGuess = (props: GameViewGuessProps): JSX.Element => {
     const onFocus = (e : React.FocusEvent<HTMLDivElement>) => {
         guessText = ''
     }
+    
+    // useEffect(()=>{
+    //     const temp = [...boxes];
+    //     while (temp.length < numBoxes) {
+    //         temp.push(<GameViewGuess guess={props.guess} content={"TYPE HERE!"} newBox={newBox}/>)
+    //     }
+
+    //     setBoxes(temp)
+    //     setNumBoxes(boxes.length)
+    // }, [ numBoxes ])
+
     return (
-        <div className="GameView-box GameView-box-guess" onKeyDown={onKeyDown} onFocus={onFocus}><span>{guessText}</span></div>
+        <div className="GameView-box GameView-box-guess" onKeyDown={onKeyDown} onFocus={onFocus}><span>{window.__GUESS_TEXT__}</span></div>
     )
 
 }

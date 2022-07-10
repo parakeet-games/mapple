@@ -15,7 +15,7 @@ function GameView() {
 			<header className="GameView-header">
 			</header>
 			<GameViewBoxes guess={correctGuess} />
-			<MappleKeyboard />
+			<MappleKeyboard/>
 		</div>
 
 	);
