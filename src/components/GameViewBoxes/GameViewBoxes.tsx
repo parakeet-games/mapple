@@ -5,7 +5,7 @@ import { GameViewGuess } from "../GameViewGuess/GameViewGuess"
 import { MappleKeyboard } from "../MappleKeyboard/MappleKeyboard";
 
 interface GameViewBoxesProps {
-    guesses: string[];
+    guesses: any[][];
     setGuesses: (newGuesses: any) => void;
 }
 
@@ -13,18 +13,24 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
     const [boxes, setBoxes] = useState<(JSX.Element)[]>([])
     const [numBoxes, setNumBoxes] = useState(1)
 
-    const [current, setCurrent] = useState("");
+    const [current, setCurrent] = useState([""]);
+
     const renderGss = guesses.map((g) => {
         return <GameViewGuess guess="india"
-                              content={g}/>
+                              content={g[0]}
+                              guessText={current[g[1]]}/>
     })
     
     const addGuess = ()=>{
         const temp =[...guesses]
-        temp.push(current)
+        temp.push([current[current.length], current.length-1])
 
         setGuesses(temp)
-        setCurrent('')
+
+        const curr = [...current]
+        curr.push('')
+        
+        setCurrent(curr)
     }
 
     return (
@@ -34,11 +40,15 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
                 {current}
             </button>
 
-            <MappleKeyboard onKeyPress={(input: any) => setCurrent(current + input)} onChange={function (e: any): void {
-                throw new Error("Function not implemented.");
-            } } guessText={""} setGuessText={function (value: SetStateAction<string>): void {
-                throw new Error("Function not implemented.");
-            } }/>
+            <MappleKeyboard
+            
+            onChange={
+                (input: any) => setCurrent(input)
+            }
+            
+            onKeyPress={
+                (input: any) => setCurrent(input)
+            }/>
     </div>
     )
 }

@@ -5,8 +5,6 @@ import { state } from '../../service/StateService';
 interface Props {
   onChange: (e: any)=> void
   onKeyPress: (e: any)=> void
-  guessText: string
-  setGuessText: Dispatch<SetStateAction<string>>
 }
 
 export const MappleKeyboard = (props: Props)=> {

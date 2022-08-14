@@ -8,6 +8,7 @@ interface GameViewGuessProps {
     content: string
     children?: string
     guess?: string
+    guessText: string
 }
 
 // function GameViewGuess(props: GameViewGuessProps) {
@@ -30,15 +31,12 @@ export const GameViewGuess = (props: GameViewGuessProps): JSX.Element => {
                 box.className = 'GameView-box GameView-box-yes'
             } else {
                 box.className = 'GameView-box GameView-box-no'
-                props.newBox()
             }
         } else {
-            // props.setGT(props.guessText + e.key)
         }
     }
 
     const onFocus = (e: React.MouseEvent<HTMLDivElement>) => {
-        console.log(props.guessText)
         state.num = 5;
     }
 

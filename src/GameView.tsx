@@ -11,8 +11,8 @@ const guess = ['', '', '', '', '', '']
 const correctGuess = 'india'
 
 function GameView() {
-	const [guesses, setGuesses] = useState(['brazil'])
-	const updateGss = (newGuesses: string[]) => {
+	const [guesses, setGuesses] = useState([['', 0]])
+	const updateGss = (newGuesses: any[][]) => {
 		setGuesses(newGuesses)
 	}
 
@@ -20,17 +20,7 @@ function GameView() {
 		<div className="GameView">
 			<header className="GameView-header">
 			</header>
-			<GameViewBoxes guesses={guesses} setGuesses={updateGuesses} />
-			<MappleKeyboard
-				guessText={guessText} setGuessText={setGuessText}
-				onChange={function (input: any): void {
-					setGuessText(input)
-					console.log("Input changed", guess);
-				}}
-
-				onKeyPress={function (button: any): void {
-					console.log("Button pressed", button);
-				}} />
+			<GameViewBoxes guesses={guesses} setGuesses={updateGss} />
 		</div>
 
 	);

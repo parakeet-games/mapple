@@ -29,3 +29,27 @@ function App() {
 }
 
 export default App;
+/*
+Colonoscopy
+Tummy Trouble
+Potty Trained
+French Kiss
+Copycat
+Loud
+Micromanagement
+Alpha
+Arctic
+YOLO
+Hippie
+Bloodsucking
+Parasitic
+Puny
+Untitled
+Pleasure
+Frisky
+Amorous
+Provocative
+Seductive
+NSFW
+Swearing
+*/
