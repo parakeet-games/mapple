@@ -6,11 +6,8 @@ import { state } from '../../service/StateService';
 
 interface GameViewGuessProps {
     content: string
+    children?: string
     guess?: string
-    correct?: boolean
-    newBox: () => void
-    guessText: string
-    setGuessText: Dispatch<SetStateAction<string>>
 }
 
 // function GameViewGuess(props: GameViewGuessProps) {
@@ -36,24 +33,14 @@ export const GameViewGuess = (props: GameViewGuessProps): JSX.Element => {
                 props.newBox()
             }
         } else {
-            props.setGT(props.guessText + e.key)
+            // props.setGT(props.guessText + e.key)
         }
     }
 
-    const onFocus = (e : React.MouseEvent<HTMLDivElement>) => {
+    const onFocus = (e: React.MouseEvent<HTMLDivElement>) => {
         console.log(props.guessText)
         state.num = 5;
     }
-    
-    // useEffect(()=>{
-    //     const temp = [...boxes];
-    //     while (temp.length < numBoxes) {
-    //         temp.push(<GameViewGuess guess={props.guess} content={"TYPE HERE!"} newBox={newBox}/>)
-    //     }
-
-    //     setBoxes(temp)
-    //     setNumBoxes(boxes.length)
-    // }, [ numBoxes ])
 
 
     return (

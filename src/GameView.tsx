@@ -11,22 +11,26 @@ const guess = ['', '', '', '', '', '']
 const correctGuess = 'india'
 
 function GameView() {
-	const [guessText, setGuessText] = useState('Sorem Potluck.')
+	const [guesses, setGuesses] = useState(['brazil'])
+	const updateGss = (newGuesses: string[]) => {
+		setGuesses(newGuesses)
+	}
+
 	return (
 		<div className="GameView">
 			<header className="GameView-header">
 			</header>
-			<GameViewBoxes guessText={guessText} setGuessText={setGuessText} guess={correctGuess} />
+			<GameViewBoxes guesses={guesses} setGuesses={updateGuesses} />
 			<MappleKeyboard
-			guessText={guessText} setGuessText={setGuessText}
-			onChange={function (input: any): void {
-				setGuessText(input)
-				console.log("Input changed", guess);
-			}}
-			
-			onKeyPress={function (button: any): void {
-				console.log("Button pressed", button);
-			}} />
+				guessText={guessText} setGuessText={setGuessText}
+				onChange={function (input: any): void {
+					setGuessText(input)
+					console.log("Input changed", guess);
+				}}
+
+				onKeyPress={function (button: any): void {
+					console.log("Button pressed", button);
+				}} />
 		</div>
 
 	);
