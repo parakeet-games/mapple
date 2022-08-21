@@ -14,6 +14,14 @@ export const MappleKeyboard = (props: Props)=> {
       <Keyboard
         onChange={onChange}
         onKeyPress={onKeyPress}
+        layout={{
+            'default': [
+              'q w e r t y u i o p {bksp}',
+              'a s d f g h j k l {enter}',
+              'z x c v b n m {enter}',
+              '{space}'
+            ]
+          }}
       />
     );
   

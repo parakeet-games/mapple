@@ -19,36 +19,37 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
     const [fullInput, setFullInput] = useState("");
 
     const renderGss = guesses.map((g) => {
-        return <GameViewGuess guess="india"
-                              guessText={g}/>
+        return <GameViewGuess guessText={g}
+            class="no" />
     })
 
     return (
         <div>
             {renderGss}
+            <GameViewGuess guessText={current}
+                class="guess" />
 
-            <GameViewGuess guess="india"
-                              guessText={current}/>
+            <div className="GameView-mkwrap">
+                <MappleKeyboard
 
-            <MappleKeyboard
-            
-            onChange={
-                (input: any) => {
-                    setCurrent(input.substring(index, input.length))
-                    setFullInput(input)
-                }
-            }
-            
-            onKeyPress={
-                (input: any) => {
-                    if (input == '{enter}') {
-                        setGuesses([...guesses, current])
-                        setCurrent('')
-                        console.log(fullInput, '::', index)
-                        setIndex(fullInput.length)
+                    onChange={
+                        (input: any) => {
+                            setCurrent(input.substring(index, input.length))
+                            setFullInput(input)
+                        }
                     }
-                }
-            }/>
-    </div>
+
+                    onKeyPress={
+                        (input: any) => {
+                            if (input == '{enter}') {
+                                setGuesses([...guesses, current])
+                                setCurrent('')
+                                console.log(fullInput, '::', index)
+                                setIndex(fullInput.length)
+                            }
+                        }
+                    } />
+            </div>
+        </div>
     )
 }

@@ -23,6 +23,15 @@ div.GameView {
     margin: auto;
 }
 
+.GameView-mkwrap {
+    position: fixed;
+    bottom: 0;
+    width: 50%;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
         animation: App-logo-spin infinite 20s linear;
