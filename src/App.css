@@ -1,47 +1,24 @@
-.App {
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;800&display=swap');
+body {
+    margin: 0;
+    font-family: Lexend, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
-
-.continents-map {
-    width: 50%;
-    height: 50%;
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+:root {
+    --guessbg-yes: #0070f0;
+    --guessfg-yes: #fff;
+    --guessbg-no: #b5cfe8;
+    --guessfg-no: #507191;
+    --guessfg-guess: #2984a8;
+    --guessfg-guessfocus: #229dce;
 }
 
 h1 {
     font-weight: 700;
-}
-
-.App-link {
-    color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
 }

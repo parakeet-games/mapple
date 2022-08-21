@@ -1,7 +1,5 @@
-import { setUncaughtExceptionCaptureCallback } from "process";
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react"
+import { useState } from "react"
 import '../../GameView.css';
-import '../../Main.css';
 import { GameViewGuess } from "../GameViewGuess/GameViewGuess"
 import { MappleKeyboard } from "../MappleKeyboard/MappleKeyboard";
 
@@ -11,27 +9,21 @@ interface GameViewBoxesProps {
 }
 
 export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.Element => {
-    const [boxes, setBoxes] = useState<(JSX.Element)[]>([])
-    const [numBoxes, setNumBoxes] = useState(1)
-
     const [current, setCurrent] = useState("");
     const [index, setIndex] = useState<number>(0);
     const [fullInput, setFullInput] = useState("");
 
     const renderGss = guesses.map((g) => {
-        return <GameViewGuess guessText={g}
-            class="no" />
+        return <GameViewGuess guessText={g} class="no" />
     })
 
     return (
         <div>
+            <GameViewGuess guessText={current} class="guess" />
             {renderGss}
-            <GameViewGuess guessText={current}
-                class="guess" />
 
             <div className="GameView-mkwrap">
                 <MappleKeyboard
-
                     onChange={
                         (input: any) => {
                             setCurrent(input.substring(index, input.length))
@@ -42,7 +34,11 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
                     onKeyPress={
                         (input: any) => {
                             if (input == '{enter}') {
-                                setGuesses([...guesses, current])
+                                setGuesses([current, ...guesses])
+                                setCurrent('')
+                                setIndex(fullInput.length)
+                            } else if (input == '{clear}') {
+                                console.log(current);
                                 setCurrent('')
                                 console.log(fullInput, '::', index)
                                 setIndex(fullInput.length)

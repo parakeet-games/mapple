@@ -1,24 +1,16 @@
-.App {
+.GameView-header {
+    width: 100vw;
+    height: 10vh;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-
-div.GameView {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    height: min-content;
+.GameView-header h1 {
+    font-size: 30pt;
 }
 
 .GameView-boxes {
-    width: 50%;
     height: 42rem;
     margin: auto;
 }
@@ -32,9 +24,14 @@ div.GameView {
     right: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 1000px) {
+    .GameView-mkwrap {
+        position: fixed;
+        bottom: 0;
+        width: 90%;
+        margin: auto;
+        left: 0;
+        right: 0;
     }
 }
 

@@ -1,7 +1,12 @@
-@media (max-width: 1100px) {
-    .GameView-boxes {
-        width: 100%;
-        padding: auto 100px;
+@media screen and (max-width: 1000px) {
+    .GameView-box {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .GameView-box {
+        width: 50%;
     }
 }
 
@@ -16,12 +21,7 @@
     box-sizing: border-box;
     height: 6rem;
     font-family: Lexend, sans-serif;
-
-    width: 50%;
 }
-
-
-/* Prevents newline from showing up when typed */
 
 .GameView-box:focus {
     outline: none;
