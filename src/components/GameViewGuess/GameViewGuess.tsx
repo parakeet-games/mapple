@@ -5,7 +5,6 @@ import '../../Main.css';
 import { state } from '../../service/StateService';
 
 interface GameViewGuessProps {
-    content: string
     children?: string
     guess?: string
     guessText: string

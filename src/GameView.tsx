@@ -11,8 +11,8 @@ const guess = ['', '', '', '', '', '']
 const correctGuess = 'india'
 
 function GameView() {
-	const [guesses, setGuesses] = useState([['', 0]])
-	const updateGss = (newGuesses: any[][]) => {
+	const [guesses, setGuesses] = useState<string[]>([])
+	const updateGss = (newGuesses: string[]) => {
 		setGuesses(newGuesses)
 	}
 
