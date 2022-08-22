@@ -14,12 +14,12 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
     const [fullInput, setFullInput] = useState("");
 
     const renderGss = guesses.map((g) => {
-        return <GameViewGuess guessText={g} class="no" />
+        return <GameViewGuess guessText={g} class="no" key={g} />
     })
 
     return (
         <div>
-            <GameViewGuess guessText={current} class="guess" />
+            <GameViewGuess guessText={current} class="guess" key={'current'} />
             {renderGss}
 
             <div className="GameView-mkwrap">
@@ -33,11 +33,19 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
 
                     onKeyPress={
                         (input: any) => {
-                            if (input == '{enter}') {
-                                setGuesses([current, ...guesses])
-                                setCurrent('')
-                                setIndex(fullInput.length)
-                            } else if (input == '{clear}') {
+                            if (input === '{enter}') {
+                                let rawcountries: String[] = require('../../resource/countrylist.json')
+                                const countries = rawcountries.map(country => country.toUpperCase());
+
+                                if (countries.includes(current.toLocaleUpperCase())) {
+                                    setGuesses([current, ...guesses])
+                                    setCurrent('')
+                                    setIndex(fullInput.length)
+                                } else {
+                                    setCurrent('Not in list')
+                                    setIndex(fullInput.length)
+                                }
+                            } else if (input === '{clear}') {
                                 console.log(current);
                                 setCurrent('')
                                 console.log(fullInput, '::', index)
