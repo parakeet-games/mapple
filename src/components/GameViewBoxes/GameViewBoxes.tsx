@@ -38,11 +38,20 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
 
                     onKeyPress={
                         (input: any) => {
-                            if (input == '{enter}') {
-                                setGuesses([current, ...guesses])
-                                setCurrent('')
-                                setIndex(fullInput.length)
-                            } else if (input == '{clear}') {
+                            if (input === '{enter}') {
+                                let countriesRaw = require('../../resource/countrylist.json');
+
+                                let countries: string[] = countriesRaw.map((country: string) => country.toUpperCase());
+
+                                if (countries.includes(current.toUpperCase())) {
+                                    setGuesses([current, ...guesses])
+                                    setCurrent('')
+                                    setIndex(fullInput.length)
+                                } else {
+                                    setCurrent('Not A Country')
+                                    setIndex(fullInput.length)
+                                }
+                            } else if (input === '{clear}') {
                                 console.log(current);
                                 setCurrent('')
                                 console.log(fullInput, '::', index)
