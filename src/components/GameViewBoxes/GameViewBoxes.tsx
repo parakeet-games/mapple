@@ -29,18 +29,25 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
                 <MappleKeyboard
                     onChange={
                         (input: any) => {
-                            var lastchar = input.substring(input.length-1, input.length)
-                            if (lastchar.match(/[a-zA-Z ]/)) setCurrent(current + lastchar)
+                            // var lastchar = input.substring(input.length-1, input.length)
+                            // console.log('lc', lastchar)
+                            // if (lastchar.match(/[a-zA-Z ]/)) setCurrent(current + lastchar)
                         }
                     }
 
                     onKeyPress={
                         (input: any) => {
-                            if (input == '{enter}') {
+                            console.log(input)
+                            console.log(/^[a-zA-Z]$/m.test(input))
+                            if (/^[a-zA-Z]$/m.test(input)) {
+                                setCurrent(current + input)
+                            } else if (input == '{space}') {
+                                setCurrent(current + ' ')
+                            } else if (input == '{enter}') {
                                 setGuesses([current, ...guesses])
                                 setCurrent('')
                             } else if (input == '{bksp}') {
-                                setCurrent(current.substring(current.length-2))
+                                setCurrent(current.substring(0, current.length-1))
                             }
                         }
                     } />
