@@ -16,14 +16,14 @@ export const MappleKeyboard = (props: Props)=> {
             'default': [
               'Q W E R T Y U I O P',
               'A S D F G H J K L',
-              'Z X C V B N M',
-              '{clear} {space} {enter}'
+              '{bksp} Z X C V B N M {enter}',
+              '{space}'
             ]
           }}
           display={{
-            '{clear}': "Clear",
-            '{space}': 'Space',
-            '{enter}': 'Submit'
+            '{bksp}': '⌫',
+            '{space}': 'space',
+            '{enter}': '↵'
           }}
       />
     );

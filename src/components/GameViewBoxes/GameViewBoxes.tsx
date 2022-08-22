@@ -10,8 +10,6 @@ interface GameViewBoxesProps {
 
 export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.Element => {
     const [current, setCurrent] = useState("");
-    const [index, setIndex] = useState<number>(0);
-    const [fullInput, setFullInput] = useState("");
 
     const renderGss = guesses.map((g) => {
         return <GameViewGuess guessText={g} class="no" />
@@ -20,14 +18,13 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
     return (
         <div>
             <GameViewGuess guessText={current} class="guess" />
-            {renderGss}
+            <div className="GameViewBoxes-wrap">{renderGss}</div>
 
             <div className="GameView-mkwrap">
                 <MappleKeyboard
                     onChange={
                         (input: any) => {
-                            setCurrent(input.substring(index, input.length))
-                            setFullInput(input)
+                            setCurrent(current + input.substring(input.length-1, input.length))
                         }
                     }
 
@@ -36,12 +33,9 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
                             if (input == '{enter}') {
                                 setGuesses([current, ...guesses])
                                 setCurrent('')
-                                setIndex(fullInput.length)
                             } else if (input == '{clear}') {
                                 console.log(current);
                                 setCurrent('')
-                                console.log(fullInput, '::', index)
-                                setIndex(fullInput.length)
                             }
                         }
                     } />
