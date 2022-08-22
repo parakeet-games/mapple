@@ -17,12 +17,17 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
         return <GameViewGuess guessText={g} class="no" key={g} />
     })
 
+    // TODO FIX BKSP HANDLING
+    // REASON FOR SWITCHING FOR COMMIT 6cd9e9a: NEED TO ADD REGULAR KEYPRESSES
+
     return (
         <div>
-            <GameViewGuess guessText={current} class="guess" key={'current'} />
+            <GameViewGuess guessText={current} class="guess" />
             {renderGss}
 
-            <div className="GameView-mkwrap">
+            <div className="GameView-mkwrap" onKeyDown={
+                (e)=>console.log(e)
+            }>
                 <MappleKeyboard
                     onChange={
                         (input: any) => {
@@ -33,19 +38,11 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
 
                     onKeyPress={
                         (input: any) => {
-                            if (input === '{enter}') {
-                                let rawcountries: String[] = require('../../resource/countrylist.json')
-                                const countries = rawcountries.map(country => country.toUpperCase());
-
-                                if (countries.includes(current.toLocaleUpperCase())) {
-                                    setGuesses([current, ...guesses])
-                                    setCurrent('')
-                                    setIndex(fullInput.length)
-                                } else {
-                                    setCurrent('Not in list')
-                                    setIndex(fullInput.length)
-                                }
-                            } else if (input === '{clear}') {
+                            if (input == '{enter}') {
+                                setGuesses([current, ...guesses])
+                                setCurrent('')
+                                setIndex(fullInput.length)
+                            } else if (input == '{clear}') {
                                 console.log(current);
                                 setCurrent('')
                                 console.log(fullInput, '::', index)
