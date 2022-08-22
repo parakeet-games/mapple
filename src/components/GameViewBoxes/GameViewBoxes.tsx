@@ -15,16 +15,22 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
         return <GameViewGuess guessText={g} class="no" />
     })
 
+    // TODO FIX BKSP HANDLING
+    // REASON FOR SWITCHING FOR COMMIT 6cd9e9a: NEED TO ADD REGULAR KEYPRESSES
+
     return (
         <div>
             <GameViewGuess guessText={current} class="guess" />
             <div className="GameViewBoxes-wrap">{renderGss}</div>
 
-            <div className="GameView-mkwrap">
+            <div className="GameView-mkwrap" onKeyDown={
+                (e)=>console.log(e)
+            }>
                 <MappleKeyboard
                     onChange={
                         (input: any) => {
-                            setCurrent(current + input.substring(input.length-1, input.length))
+                            var lastchar = input.substring(input.length-1, input.length)
+                            if (lastchar.match(/[a-zA-Z ]/)) setCurrent(current + lastchar)
                         }
                     }
 
@@ -33,9 +39,8 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
                             if (input == '{enter}') {
                                 setGuesses([current, ...guesses])
                                 setCurrent('')
-                            } else if (input == '{clear}') {
-                                console.log(current);
-                                setCurrent('')
+                            } else if (input == '{bksp}') {
+                                setCurrent(current.substring(current.length-2))
                             }
                         }
                     } />
