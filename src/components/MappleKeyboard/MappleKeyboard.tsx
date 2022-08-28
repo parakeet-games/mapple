@@ -1,16 +1,14 @@
 import Keyboard from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
 interface Props {
-  onChange: (e: any) => void
   onKeyPress: (e: any) => void
 }
 
 export const MappleKeyboard = (props: Props) => {
-  const { onChange, onKeyPress } = props;
+  const { onKeyPress } = props;
 
   return (
     <Keyboard
-      onChange={onChange}
       onKeyPress={onKeyPress}
       layout={{
         'default': [

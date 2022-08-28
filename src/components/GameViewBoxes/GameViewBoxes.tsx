@@ -28,16 +28,9 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
             {renderGss}
 
             <div className="GameView-mkwrap" onKeyDown={
-                (e)=>console.log(e)
+                (e) => console.log(e)
             }>
                 <MappleKeyboard
-                    onChange={
-                        (input: any) => {
-                            setCurrent(input.substring(index, input.length))
-                            setFullInput(input)
-                        }
-                    }
-
                     onKeyPress={
                         (input: any) => {
                             if (input === '{enter}') {
@@ -58,6 +51,12 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
                                 setCurrent('')
                                 console.log(fullInput, '::', index)
                                 setIndex(fullInput.length)
+                            } else if (input == '{space}') {
+                                setCurrent(current + ' ')
+                            } else if (input == '{bksp}') {
+                                setCurrent(current.substring(0, current.length - 1))
+                            } else if (/^[a-zA-Z]$/m.test(input)) {
+                                setCurrent(current + input)
                             }
                         }
                     } />
