@@ -34,6 +34,7 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
                     onKeyPress={
                         (input: any) => {
                             if (input === '{enter}') {
+                                // TODO Replace with list from mapple-back
                                 let countriesRaw = require('../../resource/countrylist.json');
 
                                 let countries: string[] = countriesRaw.map((country: string) => country.toUpperCase());
@@ -43,7 +44,9 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
                                     setCurrent('')
                                     setIndex(fullInput.length)
                                 } else {
-                                    setCurrent('Not A Country')
+                                    // TODO have popup alert or box shake or something instead
+                                    // I can add that - WAC
+                                    setCurrent('Not a country')
                                     setIndex(fullInput.length)
                                 }
                             } else if (input === '{clear}') {
