@@ -3,6 +3,8 @@ import '../../GameView.css';
 import { GameViewGuess } from "../GameViewGuess/GameViewGuess"
 import { MappleKeyboard } from "../MappleKeyboard/MappleKeyboard";
 
+const conly = false; // Flag for only accepting countries
+
 interface GameViewBoxesProps {
     guesses: string[];
     setGuesses: (newGuesses: any) => void;
@@ -43,7 +45,7 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
 
                                 let countries: string[] = countriesRaw.map((country: string) => country.toUpperCase());
 
-                                if (countries.includes(current.toUpperCase())) {
+                                if (countries.includes(current.toUpperCase()) || !conly) {
                                     setGuesses([current, ...guesses])
                                     setCurrent('')
                                     setIndex(fullInput.length)

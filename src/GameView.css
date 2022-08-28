@@ -1,3 +1,4 @@
+
 .GameView-header {
     width: 100vw;
     height: 10vh;
@@ -38,4 +39,23 @@
 .continents-map {
     width: 50%;
     height: 50%;
+}
+
+/* Mapple Keyboard */
+
+.simple-keyboard.hg-layout-default .hg-button.mk-enter {
+	background-color: #0ca0ff;
+    color: white;
+}
+
+.simple-keyboard.hg-layout-default .hg-button.mk-bksp {
+	background-color: #ffd4d4;
+}
+
+.simple-keyboard.hg-layout-default .hg-button.mk-clear {
+	background-color: #ff7d7d;
+}
+
+.simple-keyboard.hg-layout-default .hg-button.mk-space {
+	background-color: #d9f4ff;
 }
