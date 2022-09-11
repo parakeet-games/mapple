@@ -1,0 +1,15 @@
+S -> pipe .. main
+ATT3 ((S ..)) pipeto OLD NEW
+M / M / M 121
+
+ISOLATE>> M to S
+S -> pipe .. M
+
+B 'b'
+ATT3 redo
+N to N {
+    ATT3 pipe
+    N if99 -> (att3)
+    ATT3 redo
+    S // break
+}
