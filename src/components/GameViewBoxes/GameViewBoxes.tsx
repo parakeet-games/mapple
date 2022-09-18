@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react"
 import '../../GameView.css';
 import { GameViewGuess } from "../GameViewGuess/GameViewGuess"
+import GameViewHint from "../GameViewHint/GameViewHint";
 import { MappleKeyboard } from "../MappleKeyboard/MappleKeyboard";
 
 const conly = false; // Flag for only accepting countries
@@ -12,6 +13,7 @@ interface GameViewBoxesProps {
 
 export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.Element => {
     const [current, setCurrent] = useState("");
+    const [hint, setHint] = useState("After each guess, you get a hint.");
     const [index, setIndex] = useState<number>(0);
     const [fullInput, setFullInput] = useState("");
 
@@ -65,9 +67,9 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
             setCurrent('')
             console.log(fullInput, '::', index)
             setIndex(fullInput.length)
-        } else if (input == '{space}') {
+        } else if (input === '{space}') {
             setCurrent(current + ' ')
-        } else if (input == '{bksp}') {
+        } else if (input === '{bksp}') {
             setCurrent(current.substring(0, current.length - 1))
         } else if (/^[a-zA-Z]$/m.test(input)) {
             console.log('I am currently', current)
@@ -81,6 +83,7 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
 
     return (
         <div>
+            <GameViewHint hint={hint} />
             <GameViewGuess guessText={current} class="guess" />
             {renderGss}
 
