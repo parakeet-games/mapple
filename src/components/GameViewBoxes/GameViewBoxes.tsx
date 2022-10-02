@@ -4,7 +4,7 @@ import { GameViewGuess } from "../GameViewGuess/GameViewGuess"
 import GameViewHint from "../GameViewHint/GameViewHint";
 import { MappleKeyboard } from "../MappleKeyboard/MappleKeyboard";
 
-const conly = true; // Flag for only accepting countries
+const conly = false; // Flag for only accepting countries
 const nac = 'Not a country';
 interface GameViewBoxesProps {
     guesses: string[];
@@ -63,7 +63,7 @@ export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBo
                 setCurrent('')
                 setInputIndex(fullInput.length)
 
-                if (hintIndex === hints.length - 1) {
+                if (hintIndex === hints.length) {
                     setHint('you used up your hints you greedy pig')
                 } else {
                     var hint = document.querySelector('.GameView-hint')
