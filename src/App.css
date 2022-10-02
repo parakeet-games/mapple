@@ -17,6 +17,9 @@ code {
     --guessfg-no: #507191;
     --guessfg-guess: #2984a8;
     --guessfg-guessfocus: #229dce;
+    
+    --hintbg: #345eab36;
+    --hintfg: #446cb5;
 }
 
 h1 {
