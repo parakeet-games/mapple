@@ -8,14 +8,16 @@ const conly = false; // Flag for only accepting countries
 interface GameViewBoxesProps {
     guesses: string[];
     setGuesses: (newGuesses: any) => void;
+    answer: string;
 }
 
-export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.Element => {
+export const GameViewBoxes = ({ guesses, setGuesses, answer }: GameViewBoxesProps): JSX.Element => {
     const [current, setCurrent] = useState("");
     const [index, setIndex] = useState<number>(0);
     const [fullInput, setFullInput] = useState("");
+    const [correct, setCorrect] = useState<boolean>(false)
 
-   useMemo(()=>window.addEventListener('keyup', (e) => {
+    useMemo(() => window.addEventListener('keyup', (e) => {
         console.log('Kirby is covered in cheese sauce')
         var input = null
         if (/^[a-zA-Z]$/m.test(e.key)) {
@@ -25,32 +27,35 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
                 case ' ':
                     input = '{space}'
                     break
-    
+
                 case 'Enter':
                     input = '{enter}'
                     break
-    
+
                 case 'Backspace':
                     input = '{bksp}'
                     break
             }
         }
         // console.log("input",input)
-        if (input != null) mkOKPkokomo(input)
-    }),[])
+        if (input != null) checkInput(input)
+    }), [])
 
     const renderGss = guesses.map((g) => {
         return <GameViewGuess guessText={g} class="no" key={g} />
     })
 
-    const mkOKPkokomo = (input: any) => {
+    const checkInput = (input: any) => {
+        if (correct) return
         if (input === '{enter}') {
             // TODO Replace with list from mapple-back
             let countriesRaw = require('../../resource/countrylist.json');
 
             let countries: string[] = countriesRaw.map((country: string) => country.toUpperCase());
 
-            if (countries.includes(current.toUpperCase()) || !conly) {
+            if (current === answer) {
+                setCorrect(true)
+            } else if (countries.includes(current.toUpperCase()) || !conly) {
                 setGuesses([current, ...guesses])
                 setCurrent('')
                 setIndex(fullInput.length)
@@ -70,26 +75,40 @@ export const GameViewBoxes = ({ guesses, setGuesses }: GameViewBoxesProps): JSX.
         } else if (input == '{bksp}') {
             setCurrent(current.substring(0, current.length - 1))
         } else if (/^[a-zA-Z]$/m.test(input)) {
-            console.log('I am currently', current)
-            console.log('setting current to', current + input)
-            setCurrent(current + input)
+            console.log(`${current}[${input.toLowerCase()}]`)
+            setCurrent(current + input.toLowerCase())
         }
     }
 
     // TODO FIX BKSP HANDLING
     // REASON FOR SWITCHING FOR COMMIT 6cd9e9a: NEED TO ADD REGULAR KEYPRESSES
 
-    return (
-        <div>
-            <GameViewGuess guessText={current} class="guess" />
-            {renderGss}
+    if (correct) {
+        return (
+            <div>
+                <GameViewGuess guessText={current} class="yes" />
+                {renderGss}
 
-            <div className="GameView-mkwrap" onKeyDown={
-                (e) => console.log(e)
-            }>
-                <MappleKeyboard
-                    onKeyPress={mkOKPkokomo} />
+                <div className="GameView-mkwrap" onKeyDown={(e) => {}}>
+                    <MappleKeyboard
+                        onKeyPress={(e) => {}} />
+                </div>
             </div>
-        </div>
-    )
+        )
+    } else {
+
+        return (
+            <div>
+                <GameViewGuess guessText={current} class="guess" />
+                {renderGss}
+
+                <div className="GameView-mkwrap" onKeyDown={
+                    (e) => {checkInput}
+                }>
+                    <MappleKeyboard
+                        onKeyPress={checkInput} />
+                </div>
+            </div>
+        )
+    }
 }

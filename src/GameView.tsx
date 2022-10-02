@@ -17,7 +17,7 @@ function GameView() {
 				<header className="GameView-header">
 					<h1>MAPPLE</h1>
 				</header>
-				<GameViewBoxes guesses={guesses} setGuesses={updateGss} />
+				<GameViewBoxes guesses={guesses} setGuesses={updateGss} answer={"dominica"} />
 			</div>
 		</>
 	);
