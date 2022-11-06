@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import '../../GameView.css';
 import { GameViewGuess } from "../GameViewGuess/GameViewGuess"
 import GameViewHint from "../GameViewHint/GameViewHint";
@@ -7,14 +7,16 @@ import { MappleKeyboard } from "../MappleKeyboard/MappleKeyboard";
 const conly = false; // Flag for only accepting countries
 const nac = 'Not a country';
 interface GameViewBoxesProps {
+    current: string;
+    setCurrent: (newCurrent: string) => void;
     guesses: string[];
-    hints: string[];
     setGuesses: (newGuesses: any) => void;
     answer: string;
+    hints: string[];
 }
 
-export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBoxesProps): JSX.Element => {
-    const [current, setCurrent] = useState("");
+export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses, answer }: GameViewBoxesProps): JSX.Element => {
+
     const [inputIndex, setInputIndex] = useState<number>(0);
     const [fullInput, setFullInput] = useState("");
     const [correct, setCorrect] = useState<boolean>(false)
@@ -22,8 +24,8 @@ export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBo
     const [hint, setHint] = useState("After each guess, you get a hint.");
     const [hintIndex, setHintIndex] = useState<number>(0);
 
-    useMemo(() => window.addEventListener('keyup', (e) => {
-        console.log('Kirby is covered in cheese sauce')
+    useEffect(() => window.addEventListener('keyup', (e) => {
+
         var input = null
         if (/^[a-zA-Z]$/m.test(e.key)) {
             input = e.key
@@ -40,17 +42,21 @@ export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBo
                 case 'Backspace':
                     input = '{bksp}'
                     break
+
+                case null:
+                    return
             }
         }
-        // console.log("input",input)
-        if (input != null) checkInput(input)
-    }), [])
+
+        checkInput(input)
+    }), [window])
+
 
     const renderGss = guesses.map((g) => {
         return <GameViewGuess guessText={g} class="no" key={g} />
     })
 
-    const checkInput = (input: any) => {
+    const checkInput = useCallback((input: any) => {
         if (correct) return
         if (input === '{enter}') {
             // TODO Replace with list from mapple-back
@@ -88,24 +94,25 @@ export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBo
                 }, 1000);
             }
         } else if (input === '{clear}') {
-            console.log(current);
             setCurrent('')
-            console.log(fullInput, '::', inputIndex)
             setInputIndex(fullInput.length)
         } else if (input === '{space}') {
             setCurrent(current + ' ')
         } else if (input === '{bksp}') {
             setCurrent(current.substring(0, current.length - 1))
         } else if (/^[a-zA-Z]$/m.test(input)) {
-            if (current == nac) {
-                console.log(`now: [${input.toLowerCase}]`)
+            if (current === nac) {
                 setCurrent(current + input.toLowerCase())
             } else {
-                console.log(`now: ${current}[${input.toLowerCase()}]`)
                 setCurrent(current + input.toLowerCase())
             }
         }
-    }
+
+        console.log(`Current: '${current}'`)
+        console.log(`Input:   '${input}'`)
+    },[current])
+	console.log(`Current: '${current}'`)
+	console.log(`Input:   &&NOTHIN`)
 
     // TODO FIX BKSP HANDLING
     // REASON FOR SWITCHING FOR COMMIT 6cd9e9a: NEED TO ADD REGULAR KEYPRESSES
@@ -123,16 +130,17 @@ export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBo
             </div>
         )
     } else {
-
+        console.log(`Current: '${current}'`)
+        console.log(`Input:   &&NOTHIN`)
         return (
             <div>
                 <GameViewHint hint={hint} />
                 <GameViewGuess guessText={current} class="guess" />
                 {renderGss}
 
-                <div className="GameView-mkwrap" onKeyDown={
+                <div className="GameView-mkwrap" /*onKeyDown={
                     (e) => { checkInput }
-                }>
+                }*/>
                     <MappleKeyboard
                         onKeyPress={checkInput} />
                 </div>
