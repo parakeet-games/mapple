@@ -17,7 +17,7 @@ interface GameViewBoxesProps {
 }
 
 export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses, answer }: GameViewBoxesProps): JSX.Element => {
-
+    /* Investigate resetting the variables below - Nov 13 */
     const [inputIndex, setInputIndex] = useState<number>(0);
     const [fullInput, setFullInput] = useState("");
     const [correct, setCorrect] = useState<boolean>(false)
