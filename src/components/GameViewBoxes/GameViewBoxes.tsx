@@ -20,27 +20,27 @@ export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses,
     const [inputIndex, setInputIndex] = useState<number>(0);
     const [fullInput, setFullInput] = useState("");
     const [correct, setCorrect] = useState<boolean>(false)
-
+    const [input, setInput] = useState<string | null>('');
     const [hint, setHint] = useState("After each guess, you get a hint.");
     const [hintIndex, setHintIndex] = useState<number>(0);
 
     useEffect(() => window.addEventListener('keyup', (e) => {
 
-        var input = null
+        var input2 = null
         if (/^[a-zA-Z]$/m.test(e.key)) {
-            input = e.key
+            input2 = e.key
         } else {
             switch (e.key) {
                 case ' ':
-                    input = '{space}'
+                    input2 = '{space}'
                     break
 
                 case 'Enter':
-                    input = '{enter}'
+                    input2 = '{enter}'
                     break
 
                 case 'Backspace':
-                    input = '{bksp}'
+                    input2 = '{bksp}'
                     break
 
                 case null:
@@ -48,15 +48,16 @@ export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses,
             }
         }
 
-        checkInput(input)
+        setInput(input2)
     }), [window])
-
+    
 
     const renderGss = guesses.map((g) => {
         return <GameViewGuess guessText={g} class="no" key={g} />
     })
 
-    const checkInput = useCallback((input: any) => {
+    const checkInput = useCallback(() => {
+        console.log('current at top of checkInput   ', current )
         if (correct) return
         if (input === '{enter}') {
             // TODO Replace with list from mapple-back
@@ -64,6 +65,7 @@ export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses,
 
             if (current === answer) {
                 setCorrect(true)
+ 
             } else if (countries.includes(current.toUpperCase()) || !conly) {
                 setGuesses([current, ...guesses])
                 setCurrent('')
@@ -81,6 +83,7 @@ export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses,
                         setHint(hints[hintIndex])
                     }, 500);
                 }
+
             } else {
                 // TODO have popup alert or box shake or something instead
                 // I can add that - WAC
@@ -93,24 +96,31 @@ export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses,
                     box!.className = 'GameView-box-guess'
                 }, 1000);
             }
+
         } else if (input === '{clear}') {
             setCurrent('')
             setInputIndex(fullInput.length)
+
         } else if (input === '{space}') {
+
             setCurrent(current + ' ')
         } else if (input === '{bksp}') {
+
             setCurrent(current.substring(0, current.length - 1))
-        } else if (/^[a-zA-Z]$/m.test(input)) {
+        } else if (/^[a-zA-Z]$/m.test(input as string)) {
             if (current === nac) {
-                setCurrent(current + input.toLowerCase())
+                setCurrent(current + input?.toLowerCase())
             } else {
-                setCurrent(current + input.toLowerCase())
+             
+                setCurrent(current + input?.toLowerCase())
             }
         }
+        console.log('current at bottom of checkInput   ', current )
 
-        console.log(`Current: '${current}'`)
-        console.log(`Input:   '${input}'`)
+        
     },[current])
+    checkInput();
+
 	console.log(`Current: '${current}'`)
 	console.log(`Input:   &&NOTHIN`)
 
@@ -130,8 +140,7 @@ export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses,
             </div>
         )
     } else {
-        console.log(`Current: '${current}'`)
-        console.log(`Input:   &&NOTHIN`)
+
         return (
             <div>
                 <GameViewHint hint={hint} />

@@ -12,6 +12,7 @@ function GameView() {
 	}
 
 	const [current, setCurrent] = useState("");
+	console.log('not happening')
 
 	return (
 		<>
