@@ -5,14 +5,13 @@ import { GameViewBoxes } from './components/GameViewBoxes/GameViewBoxes';
 import { ReactComponent as Continents } from './resource/continents-map.svg';
 
 function GameView() {
-	console.log("rerender GameView")
+	console.log('%crerender GameView', 'color: blue')
 	const [guesses, setGuesses] = useState<string[]>([])
 	const updateGss = (newGuesses: string[]) => {
 		setGuesses(newGuesses)
 	}
 
 	const [current, setCurrent] = useState("");
-	console.log('not happening')
 
 	return (
 		<>

@@ -1,4 +1,8 @@
-import { useCallback, useEffect, useMemo, useState } from "react"
+/* Notes:
+setCurrent in checkInput apparently doesn't set current until checkInput is called again (2022-11-13)
+*/
+
+import { useEffect, useState } from "react"
 import '../../GameView.css';
 import { GameViewGuess } from "../GameViewGuess/GameViewGuess"
 import GameViewHint from "../GameViewHint/GameViewHint";
@@ -25,7 +29,6 @@ export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses,
     const [hintIndex, setHintIndex] = useState<number>(0);
 
     useEffect(() => window.addEventListener('keyup', (e) => {
-
         var input2 = null
         if (/^[a-zA-Z]$/m.test(e.key)) {
             input2 = e.key
@@ -48,16 +51,17 @@ export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses,
             }
         }
 
-        setInput(input2)
-    }), [window])
+        checkInput(input2)
+    }))
     
 
     const renderGss = guesses.map((g) => {
         return <GameViewGuess guessText={g} class="no" key={g} />
     })
 
-    const checkInput = useCallback(() => {
-        console.log('current at top of checkInput   ', current )
+    const checkInput = (input : any) => {
+        console.log(`%cA input:   '${input}'`, 'color: red')
+        console.log(`A current: '${current}'`)
         if (correct) return
         if (input === '{enter}') {
             // TODO Replace with list from mapple-back
@@ -102,22 +106,20 @@ export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses,
             setInputIndex(fullInput.length)
 
         } else if (input === '{space}') {
-
             setCurrent(current + ' ')
         } else if (input === '{bksp}') {
-
             setCurrent(current.substring(0, current.length - 1))
         } else if (/^[a-zA-Z]$/m.test(input as string)) {
             if (current === nac) {
                 setCurrent(current + input?.toLowerCase())
             } else {
-             
                 setCurrent(current + input?.toLowerCase())
             }
-            console.log(`current: ${current} 107`)
         }
+        
+        console.log(`B current: '${current}'`)
     }
-    console.log(`current: ${current} 110`)
+
 
     // TODO FIX BKSP HANDLING
     // REASON FOR SWITCHING FOR COMMIT 6cd9e9a: NEED TO ADD REGULAR KEYPRESSES
