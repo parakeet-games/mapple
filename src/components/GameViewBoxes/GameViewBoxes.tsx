@@ -17,11 +17,7 @@ interface GameViewBoxesProps {
 }
 
 export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses, answer }: GameViewBoxesProps): JSX.Element => {
-    /* Investigate resetting the variables below - Nov 13 */
-    const [inputIndex, setInputIndex] = useState<number>(0);
-    const [fullInput, setFullInput] = useState("");
     const [correct, setCorrect] = useState<boolean>(false)
-    const [input, setInput] = useState<string | null>('');
     const [hint, setHint] = useState("After each guess, you get a hint.");
     const [hintIndex, setHintIndex] = useState<number>(0);
 
@@ -73,7 +69,6 @@ A current: '${current}'`, 'color: red')
             } else if (countries.includes(current.toUpperCase()) || !conly) {
                 setGuesses([current, ...guesses])
                 setCurrent('')
-                setInputIndex(fullInput.length)
 
                 if (hintIndex === hints.length) {
                     setHint('you used up your hints you greedy pig')
@@ -92,7 +87,6 @@ A current: '${current}'`, 'color: red')
                 // TODO have popup alert or box shake or something instead
                 // I can add that - WAC
                 setCurrent(nac)
-                setInputIndex(fullInput.length)
 
                 var box = document.querySelector('.GameView-box-guess')
                 box!.className = 'GameView-box-guess GameView-box-nac'
@@ -103,7 +97,6 @@ A current: '${current}'`, 'color: red')
 
         } else if (input === '{clear}') {
             setCurrent('')
-            setInputIndex(fullInput.length)
         } else if (input === '{space}') {
             setCurrent(current + ' ')
         } else if (input === '{bksp}') {
