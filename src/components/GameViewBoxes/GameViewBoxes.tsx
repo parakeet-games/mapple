@@ -1,7 +1,3 @@
-/* Notes:
-setCurrent in checkInput apparently doesn't set current until checkInput is called again (2022-11-13)
-*/
-
 import { useEffect, useState } from "react"
 import '../../GameView.css';
 import { GameViewGuess } from "../GameViewGuess/GameViewGuess"
@@ -9,6 +5,7 @@ import GameViewHint from "../GameViewHint/GameViewHint";
 import { MappleKeyboard } from "../MappleKeyboard/MappleKeyboard";
 
 const conly = false; // Flag for only accepting countries
+const logging = true; // Flag for GameViewBoxes logging
 const nac = 'Not a country';
 interface GameViewBoxesProps {
     current: string;
@@ -51,7 +48,7 @@ export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses,
             }
         }
 
-        checkInput(input2)
+        checkInput(input2, 'phs')
     }))
     
 
@@ -59,9 +56,12 @@ export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses,
         return <GameViewGuess guessText={g} class="no" key={g} />
     })
 
-    const checkInput = (input : any) => {
-        console.log(`%cA input:   '${input}'`, 'color: red')
-        console.log(`A current: '${current}'`)
+    const checkInput = (input : string | null, mode : string | null) => {
+        if (logging) console.log(`%c
+A input:   '${input}'
+A mode:    '${mode}'
+A current: '${current}'`, 'color: red')
+        
         if (correct) return
         if (input === '{enter}') {
             // TODO Replace with list from mapple-back
@@ -104,7 +104,6 @@ export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses,
         } else if (input === '{clear}') {
             setCurrent('')
             setInputIndex(fullInput.length)
-
         } else if (input === '{space}') {
             setCurrent(current + ' ')
         } else if (input === '{bksp}') {
@@ -117,7 +116,10 @@ export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses,
             }
         }
         
-        console.log(`B current: '${current}'`)
+        if (logging) console.log(`
+B input:   '${input}'
+B mode:    '${mode}'
+B current: '${current}'`)
     }
 
 
@@ -147,7 +149,7 @@ export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses,
                     (e) => { checkInput }
                 }*/>
                     <MappleKeyboard
-                        onKeyPress={checkInput} />
+                        onKeyPress={(i) => checkInput(i, 'dig')} />
                 </div>
             </div>
         )
