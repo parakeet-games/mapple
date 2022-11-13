@@ -5,10 +5,14 @@ import { GameViewBoxes } from './components/GameViewBoxes/GameViewBoxes';
 import { ReactComponent as Continents } from './resource/continents-map.svg';
 
 function GameView() {
+	console.log("rerender GameView")
 	const [guesses, setGuesses] = useState<string[]>([])
 	const updateGss = (newGuesses: string[]) => {
 		setGuesses(newGuesses)
 	}
+
+	const [current, setCurrent] = useState("");
+	console.log('not happening')
 
 	return (
 		<>
@@ -17,7 +21,10 @@ function GameView() {
 				<header className="GameView-header">
 					<h1>MAPPLE</h1>
 				</header>
-				<GameViewBoxes guesses={guesses} setGuesses={updateGss} hints={[
+				<GameViewBoxes current={current}
+				setCurrent={setCurrent}
+				guesses={guesses}
+				setGuesses={updateGss} hints={[
 					"Green is not a creative color",
 					"There's always time for a song.",
 					"We must feed him gravel!",

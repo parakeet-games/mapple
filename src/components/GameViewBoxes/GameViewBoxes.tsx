@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import '../../GameView.css';
 import { GameViewGuess } from "../GameViewGuess/GameViewGuess"
 import GameViewHint from "../GameViewHint/GameViewHint";
@@ -7,49 +7,57 @@ import { MappleKeyboard } from "../MappleKeyboard/MappleKeyboard";
 const conly = false; // Flag for only accepting countries
 const nac = 'Not a country';
 interface GameViewBoxesProps {
+    current: string;
+    setCurrent: (newCurrent: string) => void;
     guesses: string[];
-    hints: string[];
     setGuesses: (newGuesses: any) => void;
     answer: string;
+    hints: string[];
 }
 
-export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBoxesProps): JSX.Element => {
-    const [current, setCurrent] = useState("");
+export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses, answer }: GameViewBoxesProps): JSX.Element => {
+
     const [inputIndex, setInputIndex] = useState<number>(0);
     const [fullInput, setFullInput] = useState("");
     const [correct, setCorrect] = useState<boolean>(false)
-
+    const [input, setInput] = useState<string | null>('');
     const [hint, setHint] = useState("After each guess, you get a hint.");
     const [hintIndex, setHintIndex] = useState<number>(0);
 
-    useMemo(() => window.addEventListener('keyup', (e) => {
-        var input = null
+    useEffect(() => window.addEventListener('keyup', (e) => {
+
+        var input2 = null
         if (/^[a-zA-Z]$/m.test(e.key)) {
-            input = e.key
+            input2 = e.key
         } else {
             switch (e.key) {
                 case ' ':
-                    input = '{space}'
+                    input2 = '{space}'
                     break
 
                 case 'Enter':
-                    input = '{enter}'
+                    input2 = '{enter}'
                     break
 
                 case 'Backspace':
-                    input = '{bksp}'
+                    input2 = '{bksp}'
                     break
+
+                case null:
+                    return
             }
         }
-        if (input != null) checkInput(input)
-    }), [])
+
+        setInput(input2)
+    }), [window])
+    
 
     const renderGss = guesses.map((g) => {
         return <GameViewGuess guessText={g} class="no" key={g} />
     })
 
-    const checkInput = (input: any) => {
-        throw new Error();
+    const checkInput = useCallback(() => {
+        console.log('current at top of checkInput   ', current )
         if (correct) return
         if (input === '{enter}') {
             // TODO Replace with list from mapple-back
@@ -57,6 +65,7 @@ export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBo
 
             if (current === answer) {
                 setCorrect(true)
+ 
             } else if (countries.includes(current.toUpperCase()) || !conly) {
                 setGuesses([current, ...guesses])
                 setCurrent('')
@@ -74,6 +83,7 @@ export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBo
                         setHint(hints[hintIndex])
                     }, 500);
                 }
+
             } else {
                 // TODO have popup alert or box shake or something instead
                 // I can add that - WAC
@@ -86,18 +96,23 @@ export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBo
                     box!.className = 'GameView-box-guess'
                 }, 1000);
             }
+
         } else if (input === '{clear}') {
             setCurrent('')
             setInputIndex(fullInput.length)
+
         } else if (input === '{space}') {
+
             setCurrent(current + ' ')
         } else if (input === '{bksp}') {
+
             setCurrent(current.substring(0, current.length - 1))
-        } else if (/^[a-zA-Z]$/m.test(input)) {
-            if (current == nac) {
-                setCurrent(current + input.toLowerCase())
+        } else if (/^[a-zA-Z]$/m.test(input as string)) {
+            if (current === nac) {
+                setCurrent(current + input?.toLowerCase())
             } else {
-                setCurrent(current + input.toLowerCase())
+             
+                setCurrent(current + input?.toLowerCase())
             }
             console.log(`current: ${current} 107`)
         }
@@ -126,7 +141,9 @@ export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBo
                 <GameViewGuess guessText={current} class="guess" />
                 {renderGss}
 
-                <div className="GameView-mkwrap">
+                <div className="GameView-mkwrap" /*onKeyDown={
+                    (e) => { checkInput }
+                }*/>
                     <MappleKeyboard
                         onKeyPress={checkInput} />
                 </div>
