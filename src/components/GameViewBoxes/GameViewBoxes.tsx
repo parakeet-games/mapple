@@ -23,7 +23,6 @@ export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBo
     const [hintIndex, setHintIndex] = useState<number>(0);
 
     useMemo(() => window.addEventListener('keyup', (e) => {
-        console.log('Kirby is covered in cheese sauce')
         var input = null
         if (/^[a-zA-Z]$/m.test(e.key)) {
             input = e.key
@@ -42,7 +41,6 @@ export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBo
                     break
             }
         }
-        // console.log("input",input)
         if (input != null) checkInput(input)
     }), [])
 
@@ -51,6 +49,7 @@ export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBo
     })
 
     const checkInput = (input: any) => {
+        throw new Error();
         if (correct) return
         if (input === '{enter}') {
             // TODO Replace with list from mapple-back
@@ -88,9 +87,7 @@ export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBo
                 }, 1000);
             }
         } else if (input === '{clear}') {
-            console.log(current);
             setCurrent('')
-            console.log(fullInput, '::', inputIndex)
             setInputIndex(fullInput.length)
         } else if (input === '{space}') {
             setCurrent(current + ' ')
@@ -98,14 +95,14 @@ export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBo
             setCurrent(current.substring(0, current.length - 1))
         } else if (/^[a-zA-Z]$/m.test(input)) {
             if (current == nac) {
-                console.log(`now: [${input.toLowerCase}]`)
                 setCurrent(current + input.toLowerCase())
             } else {
-                console.log(`now: ${current}[${input.toLowerCase()}]`)
                 setCurrent(current + input.toLowerCase())
             }
+            console.log(`current: ${current} 107`)
         }
     }
+    console.log(`current: ${current} 110`)
 
     // TODO FIX BKSP HANDLING
     // REASON FOR SWITCHING FOR COMMIT 6cd9e9a: NEED TO ADD REGULAR KEYPRESSES
@@ -123,16 +120,13 @@ export const GameViewBoxes = ({ guesses, hints, setGuesses, answer }: GameViewBo
             </div>
         )
     } else {
-
         return (
             <div>
                 <GameViewHint hint={hint} />
                 <GameViewGuess guessText={current} class="guess" />
                 {renderGss}
 
-                <div className="GameView-mkwrap" onKeyDown={
-                    (e) => { checkInput }
-                }>
+                <div className="GameView-mkwrap">
                     <MappleKeyboard
                         onKeyPress={checkInput} />
                 </div>
