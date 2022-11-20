@@ -1,3 +1,4 @@
+import useEventListener from "@use-it/event-listener";
 import { useEffect, useState } from "react"
 import '../../GameView.css';
 import { GameViewGuess } from "../GameViewGuess/GameViewGuess"
@@ -20,8 +21,8 @@ export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses,
     const [correct, setCorrect] = useState<boolean>(false)
     const [hint, setHint] = useState("After each guess, you get a hint.");
     const [hintIndex, setHintIndex] = useState<number>(0);
-
-    useEffect(() => window.addEventListener('keyup', (e) => {
+  
+    const handler =  (e: { key: string; }) => {
         var input2 = null
         if (/^[a-zA-Z]$/m.test(e.key)) {
             input2 = e.key
@@ -45,8 +46,8 @@ export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses,
         }
 
         checkInput(input2, 'phs')
-    }))
-    
+    }
+    useEventListener('keydown', handler);
 
     const renderGss = guesses.map((g) => {
         return <GameViewGuess guessText={g} class="no" key={g} />
