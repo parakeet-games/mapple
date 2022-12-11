@@ -17,6 +17,10 @@ interface GameViewBoxesProps {
     hints: string[];
 }
 
+const test1 = {
+    
+}
+
 export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses, answer }: GameViewBoxesProps): JSX.Element => {
     const [correct, setCorrect] = useState<boolean>(false)
     const [hint, setHint] = useState("After each guess, you get a hint.");

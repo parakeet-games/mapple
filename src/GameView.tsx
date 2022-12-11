@@ -3,6 +3,7 @@ import './GameView.css';
 
 import { GameViewBoxes } from './components/GameViewBoxes/GameViewBoxes';
 import { ReactComponent as Continents } from './resource/continents-map.svg';
+import { textSpanIntersection } from 'typescript';
 
 function GameView() {
 	console.log('%crerender GameView', 'color: blue')
@@ -12,6 +13,10 @@ function GameView() {
 	}
 
 	const [current, setCurrent] = useState("");
+	var test1 = {
+		name: 'united states',
+		hints: ['among first democracies', 'flag is striped', 'fought many wars', 'north american', 'considered a superpower']
+	};
 
 	return (
 		<>
@@ -23,19 +28,7 @@ function GameView() {
 				<GameViewBoxes current={current}
 				setCurrent={setCurrent}
 				guesses={guesses}
-				setGuesses={updateGss} hints={[
-					"Green is not a creative color",
-					"There's always time for a song.",
-					"We must feed him gravel!",
-					"Inside my mind, there is a digital mind!",
-					"You're better off with plain white sauce!",
-					"It's not very good at all!",
-					"You can’t eat diamonds, can you?",
-					"You laid an egg. Quick, make a wish!",
-					"That's our family scent!",
-					"Freelancers deserve to die!",
-					"Choo choo, coming through...",
-					"Come on in."]} answer="dominica" />
+				setGuesses={updateGss} hints={test1.hints} answer={test1.name} />
 			</div>
 		</>
 	);
