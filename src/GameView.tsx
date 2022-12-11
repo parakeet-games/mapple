@@ -3,7 +3,6 @@ import './GameView.css';
 
 import { GameViewBoxes } from './components/GameViewBoxes/GameViewBoxes';
 import { ReactComponent as Continents } from './resource/continents-map.svg';
-import { textSpanIntersection } from 'typescript';
 
 function GameView() {
 	console.log('%crerender GameView', 'color: blue')

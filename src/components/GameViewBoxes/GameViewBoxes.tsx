@@ -1,5 +1,5 @@
 import useEventListener from "@use-it/event-listener";
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import '../../GameView.css';
 import { GameViewGuess } from "../GameViewGuess/GameViewGuess"
 import GameViewHint from "../GameViewHint/GameViewHint";
@@ -15,10 +15,6 @@ interface GameViewBoxesProps {
     setGuesses: (newGuesses: any) => void;
     answer: string;
     hints: string[];
-}
-
-const test1 = {
-    
 }
 
 export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses, answer }: GameViewBoxesProps): JSX.Element => {
