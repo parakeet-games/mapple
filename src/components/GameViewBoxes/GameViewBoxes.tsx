@@ -7,7 +7,7 @@ import { MappleKeyboard } from "../MappleKeyboard/MappleKeyboard";
 
 const conly = false; // Flag for only accepting countries
 const logging = true; // Flag for GameViewBoxes logging
-const nac = 'Not a country';
+const nac = 'Not a country.';
 interface GameViewBoxesProps {
     current: string;
     setCurrent: (newCurrent: string) => void;
@@ -19,7 +19,7 @@ interface GameViewBoxesProps {
 
 export const GameViewBoxes = ({ current, setCurrent, guesses, hints, setGuesses, answer }: GameViewBoxesProps): JSX.Element => {
     const [correct, setCorrect] = useState<boolean>(false)
-    const [hint, setHint] = useState("After each guess, you get a hint.");
+    const [hint, setHint] = useState("Make a guess, and you'll get a hint.");
     const [hintIndex, setHintIndex] = useState<number>(0);
   
     const handler =  (e: { key: string; }) => {
@@ -72,7 +72,7 @@ A current: '${current}'`, 'color: red')
                 setCurrent('')
 
                 if (hintIndex === hints.length) {
-                    setHint('you used up your hints you greedy pig')
+                    setHint('You ran out of hints.')
                 } else {
                     var hint = document.querySelector('.GameView-hint')
                     hint!.className = 'GameView-hint GameView-hintblur'
