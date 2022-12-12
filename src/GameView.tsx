@@ -13,8 +13,8 @@ function GameView() {
 
 	const [current, setCurrent] = useState("");
 	var test1 = {
-		name: 'united states',
-		hints: ['among first democracies', 'flag is striped', 'fought many wars', 'north american', 'considered a superpower']
+		name: 'iran',
+		hints: ['2nd largest proved gas reserves', 'Has its own calendar', 'Officially Muslim, mostly Shīʿa', '24% of men use tobacco', 'Weekend is Thursday/Friday', 'Formerly known as Persia']
 	};
 
 	return (
@@ -25,9 +25,9 @@ function GameView() {
 					<h1>MAPPLE</h1>
 				</header>
 				<GameViewBoxes current={current}
-				setCurrent={setCurrent}
-				guesses={guesses}
-				setGuesses={updateGss} hints={test1.hints} answer={test1.name} />
+					setCurrent={setCurrent}
+					guesses={guesses}
+					setGuesses={updateGss} hints={test1.hints} answer={test1.name} />
 			</div>
 		</>
 	);
