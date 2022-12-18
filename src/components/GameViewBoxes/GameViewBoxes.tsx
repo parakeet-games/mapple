@@ -79,10 +79,10 @@ A current: '${current}'`,
         (country: string) => country.toUpperCase()
       );
 
-      if (current === answer) {
+      if (current.toUpperCase() === answer.toUpperCase()) {
         setCorrect(true);
       } else if (countries.includes(current.toUpperCase()) || !conly) {
-        setGuesses([current, ...guesses]);
+        guesses.push(current)
         setCurrent("");
 
         if (hintIndex === hints.length) {

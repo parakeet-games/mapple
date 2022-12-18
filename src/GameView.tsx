@@ -4,6 +4,8 @@ import './GameView.css';
 import { GameViewBoxes } from './components/GameViewBoxes/GameViewBoxes';
 import { ReactComponent as Continents } from './resource/continents-map.svg';
 
+import days from "./resource/days.json";
+
 function GameView() {
 	console.log('%crerender GameView', 'color: blue')
 	const [guesses, setGuesses] = useState<string[]>([])
@@ -12,17 +14,14 @@ function GameView() {
 	}
 
 	const [current, setCurrent] = useState("");
-	// Kenya
-// Currency is the shilling
-// Has a savannah
-// Over 60 languages spoken (src)
-// Coastal country in Africa
-// Flag is black, red, green, and white
 
-	var test1 = {
-		name: 'kenya',
-		hints: ['Currency is the shilling', 'Has a savannah', 'Over 60 languages spoken', 'Coastal country in Africa', 'Flag is black, red, green, and white']
-	};
+	var today = new Date()
+	var todaystr = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`
+
+	console.log(todaystr);
+	console.log(Object.keys(days));
+
+	var nation = days['2022-12-12']
 
 	return (
 		<>
@@ -34,7 +33,7 @@ function GameView() {
 				<GameViewBoxes current={current}
 					setCurrent={setCurrent}
 					guesses={guesses}
-					setGuesses={updateGss} hints={test1.hints} answer={test1.name} />
+					setGuesses={updateGss} hints={nation.slice(1)} answer={nation[0]} />
 			</div>
 		</>
 	);
