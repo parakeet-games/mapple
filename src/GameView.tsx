@@ -12,9 +12,16 @@ function GameView() {
 	}
 
 	const [current, setCurrent] = useState("");
+	// Kenya
+// Currency is the shilling
+// Has a savannah
+// Over 60 languages spoken (src)
+// Coastal country in Africa
+// Flag is black, red, green, and white
+
 	var test1 = {
-		name: 'iran',
-		hints: ['2nd largest proved gas reserves', 'Has its own calendar', 'Officially Muslim, mostly Shīʿa', '24% of men use tobacco', 'Weekend is Thursday/Friday', 'Formerly known as Persia']
+		name: 'kenya',
+		hints: ['Currency is the shilling', 'Has a savannah', 'Over 60 languages spoken', 'Coastal country in Africa', 'Flag is black, red, green, and white']
 	};
 
 	return (
