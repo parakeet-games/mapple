@@ -12,16 +12,10 @@ function GameView() {
 	}
 
 	const [current, setCurrent] = useState("");
-	// Kenya
-// Currency is the shilling
-// Has a savannah
-// Over 60 languages spoken (src)
-// Coastal country in Africa
-// Flag is black, red, green, and white
 
 	var test1 = {
-		name: 'kenya',
-		hints: ['Currency is the shilling', 'Has a savannah', 'Over 60 languages spoken', 'Coastal country in Africa', 'Flag is black, red, green, and white']
+		name: 'tunisia',
+		hints: ['Slightly larger in area than Georgia (the state)', 'Has a southern border with the Sahara', 'Official language is Arabic', 'Colonized by the French', 'Flag is red and white.']
 	};
 
 	return (
