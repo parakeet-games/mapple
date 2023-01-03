@@ -14,8 +14,8 @@ function GameView() {
 	const [current, setCurrent] = useState("");
 
 	var test1 = {
-		name: 'tunisia',
-		hints: ['Slightly larger in area than Georgia (the state)', 'Has a southern border with the Sahara', 'Official language is Arabic', 'Colonized by the French', 'Flag is red and white.']
+		name: 'Philippines',
+		hints: ['Collection of islands with a tropical marine climate.', 'Inside the aastride typhoon belt', 'Made up of 7,641 islands', 'Colonized by the Spanish', 'Flag is red, blue, and white']
 	};
 
 	return (
