@@ -79,8 +79,9 @@ A current: '${current}'`,
         (country: string) => country.toUpperCase()
       );
 
-      if (current === answer) {
+      if (current === answer.toLowerCase()) {
         setCorrect(true);
+        console.log('we got em')
       } else if (countries.includes(current.toUpperCase()) || !conly) {
         setGuesses([current, ...guesses]);
         setCurrent("");
