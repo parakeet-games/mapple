@@ -16,7 +16,8 @@ function GameView() {
   var test1 = {
     name: "Oman",
     hints: [
-      "Located in the Middle East between Yemen and the UAE",
+      "Located in the Middle East",
+      "Has borders with Yemen",
       "Roughly twice the size of the U.S. state of Georgia",
       "Heavily dependent on oil and gas",
       "Capital is Muscat",
