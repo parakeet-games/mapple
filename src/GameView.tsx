@@ -14,13 +14,13 @@ function GameView() {
   const [current, setCurrent] = useState("");
 
   var test1 = {
-    name: "Egypt",
+    name: "Oman",
     hints: [
-      "This country is located in the northeastern region of Africa.",
-      "The official language is a Semitic language that uses the Arabic script.",
-      "The currency is the pound.",
-      "The capital city is home to one of the largest and busiest squares in Africa.",
-      "It is home to some of the oldest and most famous pyramids in the world.",
+      "Located in the Middle East between Yemen and the UAE",
+      "Roughly twice the size of the U.S. state of Georgia",
+      "Heavily dependent on oil and gas",
+      "Capital is Muscat",
+      "Former Portugese colony, became independent in 1650",
     ],
   };
 
