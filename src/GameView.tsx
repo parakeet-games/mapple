@@ -14,14 +14,15 @@ function GameView() {
   const [current, setCurrent] = useState("");
 
   var test1 = {
-    name: "Oman",
+    name: "Uruguay",
     hints: [
-      "Located in the Middle East",
-      "Has borders with Yemen",
-      "Roughly twice the size of the U.S. state of Georgia",
-      "Heavily dependent on oil and gas",
-      "Capital is Muscat",
-      "Former Portugese colony, became independent in 1650",
+      "Located in the South America",
+      "Has borders with Argentina",
+      "Has the longest national anthem in the world",
+      "Organizers of the first World Cup in 1930",
+      "Main exports are sulfate wood pulp, beef, and soybeans",
+      "Capital is Montevideo",
+      "Former Portugese colony, became independent in 1828",
     ],
   };
 
