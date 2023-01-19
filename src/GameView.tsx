@@ -22,7 +22,7 @@ function GameView() {
       "Organizers of the first World Cup in 1930",
       "Main exports are sulfate wood pulp, beef, and soybeans",
       "Capital is Montevideo",
-      "Former Portugese colony, became independent in 1828",
+      "Former Spanish colony, became independent in 1828",
     ],
   };
 
