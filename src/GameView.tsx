@@ -14,15 +14,15 @@ function GameView() {
   const [current, setCurrent] = useState("");
 
   var test1 = {
-    name: "Uruguay",
+    name: "New Zealand",
     hints: [
-      "Located in the South America",
-      "Has borders with Argentina",
-      "Has the longest national anthem in the world",
-      "Organizers of the first World Cup in 1930",
-      "Main exports are sulfate wood pulp, beef, and soybeans",
-      "Capital is Montevideo",
-      "Former Spanish colony, became independent in 1828",
+      "Located in the South Pacific Ocean",
+      "Is an island, has no land borders",
+      "National holiday is 6 February",
+      "Significant consumer of amphetamines",
+      "Main exports are dairy products, sheep/goat meats, lumber",
+      "Named after the Dutch province of Zeeland",
+      "Former British colony, became independent in 1907",
     ],
   };
 
