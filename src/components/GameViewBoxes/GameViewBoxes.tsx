@@ -87,7 +87,7 @@ A current: '${current}'`,
         setCurrent("");
 
         if (hintIndex === hints.length) {
-          setHint("You ran out of hints.");
+          setHint("You're out of hints!");
         } else {
           var hint = document.querySelector(".GameView-hint");
           hint!.className = "GameView-hint GameView-hintblur";

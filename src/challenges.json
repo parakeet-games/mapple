@@ -1,0 +1,129 @@
+{
+  "default": {
+      "answer": "United States",
+      "clues": [
+        "The first modern democracy",
+        "Flag is striped",
+        "Has fought many wars",
+        "Located in North America",
+        "Considered a world superpower"
+      ]
+  },
+  "20221211": {
+    "answer": "United States",
+    "clues": [
+      "among first democracies",
+      "flag is striped",
+      "fought many wars",
+      "north american",
+      "considered a superpower"
+    ]
+  },
+  "20221212": {
+    "answer": "Iran",
+    "clues": [
+      "2nd largest proved gas reserves",
+      "Has its own calendar",
+      "Officially Muslim, mostly Shīʿa",
+      "24% of men use tobacco",
+      "Weekend is Thursday/Friday",
+      "Formerly known as Persia"
+    ]
+  },
+  "20221218": {
+    "answer": "Kenya",
+    "clues": [
+      "Currency is the shilling",
+      "Has a savannah",
+      "Over 60 languages spoken",
+      "Coastal country in Africa",
+      "Flag is black, red, green, and white"
+    ]
+  },
+  "20221226": {
+    "answer": "Tunisia",
+    "clues": [
+      "Slightly larger in area than Georgia (the state)",
+      "Has a southern border with the Sahara",
+      "Official language is Arabic",
+      "Colonized by the French",
+      "Flag is red and white."
+    ]
+  },
+  "20230102": {
+    "answer": "Philippines",
+    "clues": [
+      "Collection of islands with a tropical marine climate.",
+      "Inside the aastride typhoon belt",
+      "Made up of 7,641 islands",
+      "Colonized by the Spanish",
+      "Flag is red, blue, and white"
+    ]
+  },
+  "20230108": {
+    "answer": "Egypt",
+    "clues": [
+      "This country is located in the northeastern region of Africa.",
+      "The official language is a Semitic language that uses the Arabic script.",
+      "The currency is the pound.",
+      "The capital city is home to one of the largest and busiest squares in Africa.",
+      "It is home to some of the oldest and most famous pyramids in the world."
+    ]
+  },
+  "20230118": {
+    "answer": "Oman",
+    "clues": [
+      "Located in the Middle East",
+      "Has borders with Yemen",
+      "Roughly twice the size of the U.S. state of Georgia",
+      "Heavily dependent on oil and gas",
+      "Capital is Muscat",
+      "Former Portugese colony, became independent in 1650"
+    ]
+  },
+  "20230119": {
+    "answer": "Uruguay",
+    "clues": [
+      "Located in the South America",
+      "Has borders with Argentina",
+      "Has the longest national anthem in the world",
+      "Organizers of the first World Cup in 1930",
+      "Main exports are sulfate wood pulp, beef, and soybeans",
+      "Capital is Montevideo",
+      "Former Spanish colony, became independent in 1828"
+    ]
+  },
+  "20230122": {
+    "answer": "New Zealand",
+    "clues": [
+      "Located in the South Pacific Ocean",
+      "Is an island, has no land borders",
+      "National holiday is 6 February",
+      "Significant consumer of amphetamines",
+      "Main exports are dairy products, sheep/goat meats, lumber",
+      "Named after the Dutch province of Zeeland",
+      "Former British colony, became independent in 1907"
+    ]
+  },
+  "20230123": {
+    "answer": "Somalia",
+    "clues": [
+      "Located in Eastern Africa, near Ethiopia",
+      "Slightly smaller than Texas",
+      "Created after former British and Italian colonies merged in 1960",
+      "Last national railway dismantled by the British in the 1940s",
+      "The longest coastline in mainland Africa"
+    ]
+  },
+  "20230124": {
+    "answer": "Montenegro",
+    "clues": [
+      "Located in the Balkans in Europe",
+      "Declared independence in 2006",
+      "Name means 'black mountain'",
+      "Similarly sized to Connecticut",
+      "Less than one million people",
+      "Flag is red with a two-headed bird"
+    ]
+  }
+}

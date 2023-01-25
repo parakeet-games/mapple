@@ -3,7 +3,8 @@ import "./GameView.css";
 
 import { GameViewBoxes } from "./components/GameViewBoxes/GameViewBoxes";
 import { ReactComponent as Continents } from "./resource/continents-map.svg";
-import clues from './clues.json'
+import clues from './challenges.json'
+import { getJSDocDeprecatedTag } from "typescript";
 
 
 function GameView() {
@@ -15,22 +16,15 @@ function GameView() {
 
   const [current, setCurrent] = useState("");
 
-  console.log(clues)
+  var challenge: any;
+  // @ts-ignore
+  challenge = clues[getDate()];
 
-  var date = new Date()
+  console.log(getDate(new Date("01/01/2023")));
+  console.log(getDate(new Date("01/10/2023")));
 
-  var currentChallenge: any;
-
-  try {
-    // @ts-ignore
-    currentChallenge = clues[`${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`];
-  } catch (error) {
-    currentChallenge = {
-      answer: "United States",
-      hints: [
-        'The first modern democracy', 'Flag is striped', 'Has fought many wars', 'Located in North American', 'Considered a world superpower'
-      ]
-    }
+  if (challenge == undefined) {
+    challenge = clues["default"]
   }
 
   return (
@@ -47,18 +41,34 @@ function GameView() {
       <div className="GameView">
         <header className="GameView-header">
           <h1>MAPPLE</h1>
+          {/* <p>A geography guessing game! Guess any country to get started.
+            All 195 countries with UN recognition, including the non-members of Palestine and Vatican City, are valid.
+            This game is still in its development stages!</p> */}
         </header>
         <GameViewBoxes
           current={current}
           setCurrent={setCurrent}
           guesses={guesses}
           setGuesses={updateGss}
-          hints={currentChallenge.clues}
-          answer={currentChallenge.answer}
+          hints={challenge.clues}
+          answer={challenge.answer}
         />
       </div>
     </>
   );
+}
+
+function getDate(date: Date = new Date()) {
+  var yyyy: string = date.getFullYear() + ''
+
+  var mm: string | number = date.getMonth() + 1
+  if (mm < 10) mm = '0' + mm
+
+  var dd: string | number = date.getDate()
+  if (dd < 10) dd = '0' + dd
+
+
+  return `${yyyy}${mm}${dd}`
 }
 
 export default GameView;
