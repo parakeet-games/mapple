@@ -125,5 +125,38 @@
       "Less than one million people",
       "Flag is red with a two-headed bird"
     ]
+  },
+  "20230125": {
+    "answer": "Botswana",
+    "clues": [
+      "Located in Southern Africa",
+      "Former British protectorate",
+      "Independent in 1966",
+      "70% desert",
+      "Slightly more dense than Canada",
+      "Flag is predominantly blue, with white and black"
+    ]
+  },
+  "20230126": {
+    "answer": "Nigeria",
+    "clues": [
+      "Largest population in Africa",
+      "Independent from Britain in 1960s",
+      "Made it to the World Cup 5 times",
+      "Divided between Muslims and Christians",
+      "Over 500 regional languages",
+      "Flag is green and white"
+    ]
+  },
+  "20230127": {
+    "answer": "Latvia",
+    "clues": [
+      "Third of population lives in capital",
+      "NATO member",
+      "Reestablished independence in 1991",
+      "Former member of the Warsaw Pact",
+      "Located in the Balkans",
+      "Flag is red and white"
+    ]
   }
 }
