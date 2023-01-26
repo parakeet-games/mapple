@@ -4,7 +4,6 @@ import "./GameView.css";
 import { GameViewBoxes } from "./components/GameViewBoxes/GameViewBoxes";
 import { ReactComponent as Continents } from "./resource/continents-map.svg";
 import clues from './challenges.json'
-import { getJSDocDeprecatedTag } from "typescript";
 
 
 function GameView() {
@@ -20,10 +19,7 @@ function GameView() {
   // @ts-ignore
   challenge = clues[getDate()];
 
-  console.log(getDate(new Date("01/01/2023")));
-  console.log(getDate(new Date("01/10/2023")));
-
-  if (challenge == undefined) {
+  if (challenge === undefined) {
     challenge = clues["default"]
   }
 
