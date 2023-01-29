@@ -1,3 +1,10 @@
+.GameView {
+    width: 75vw;
+    top: 0;
+    right: 0;
+    position: fixed;
+    text-align: center;
+}
 
 .GameView-header {
     width: 100vw;
@@ -7,8 +14,31 @@
     text-align: center;
 }
 
-.GameView-header h1 {
-    font-size: 30pt;
+.GameView-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25vw;
+    height: 100vh;
+
+    z-index: 9999;
+    backdrop-filter: blur(10px) brightness(40%);
+    
+    text-align: center;
+    padding: 1rem;
+}
+
+.GameView-nav h1 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+.GameView-nav h3 {
+    color: var(--statsfg);
+    font-size: 1.25em;
+    font-weight: 600;
+    margin-top: 0;
 }
 
 .GameView-boxes {
@@ -21,7 +51,7 @@
     bottom: 0;
     width: 50%;
     margin: auto;
-    left: 0;
+    left: 25%;
     right: 0;
 }
 
@@ -31,7 +61,7 @@
         bottom: 0;
         width: 90%;
         margin: auto;
-        left: 0;
+        left: 25%;
         right: 0;
     }
 }

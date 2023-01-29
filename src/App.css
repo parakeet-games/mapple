@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;800&display=swap');
 body {
     margin: 0;
     font-family: Lexend, sans-serif;
@@ -21,6 +21,8 @@ code {
     
     --hintbg: #345eab36;
     --hintfg: #446cb5;
+
+    --statsfg: #ffb300;
 }
 
 h1 {
