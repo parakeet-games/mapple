@@ -1,13 +1,13 @@
 {
   "default": {
-      "answer": "United States",
-      "clues": [
-        "The first modern democracy",
-        "Flag is striped",
-        "Has fought many wars",
-        "Located in North America",
-        "Considered a world superpower"
-      ]
+    "answer": "United States",
+    "clues": [
+      "The first modern democracy",
+      "Flag is striped",
+      "Has fought many wars",
+      "Located in North America",
+      "Considered a world superpower"
+    ]
   },
   "20221211": {
     "answer": "United States",
@@ -157,6 +157,50 @@
       "Former member of the Warsaw Pact",
       "One of the Baltic states",
       "Flag is red and white"
+    ]
+  },
+  "20230130": {
+    "answer": "Germany",
+    "clues": [
+      "In top 2 most populous in its continent",
+      "NATO and EU member",
+      "Known for its cars",
+      "Formerly split in two",
+      "Flag has three horizontal stripes"
+    ]
+  },
+  "20230131": {
+    "answer": "Venezuela",
+    "clues": [
+      "Borders 3 countries",
+      "In top 5 most populous in its continent",
+      "Has world's highest waterfall",
+      "Flag has eight stars",
+      "Flag has three horizontal stripes",
+      "Spanish-speaking",
+      "Celebrates Christmas with roller skating"
+    ]
+  },
+  "20230201": {
+    "answer": "South Africa",
+    "clues": [
+      "Surrounds another country",
+      "Unified in 1910s",
+      "Has 11 official languages",
+      "Southernmost in its continent",
+      "Flag has 6 colors",
+      "Name is derived from a continent's"
+    ]
+  },
+  "20230202": {
+    "answer": "Malta",
+    "clues": [
+      "Is an island, has no land borders",
+      "In top 10 smallest countries by land area",
+      "Gained indpendence in 1964",
+      "In the Mediterranean",
+      "Has about 500,000 people",
+      "Flag has primarily 2 colors"
     ]
   }
 }
