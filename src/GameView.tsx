@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./GameView.css";
 
 import { GameViewBoxes } from "./components/GameViewBoxes/GameViewBoxes";
-import { ReactComponent as Continents } from "./resource/continents-map.svg";
-import clues from './challenges.json'
+import { ReactComponent as Continents } from "./resource/continentsMap.svg";
+import challenges from './resource/challenges.json'
 
 
 function GameView() {
@@ -17,10 +17,10 @@ function GameView() {
 
   var challenge: any;
   // @ts-ignore
-  challenge = clues[getDate()];
+  challenge = challenges[dateToStr()];
 
   if (challenge === undefined) {
-    challenge = clues["default"]
+    challenge = challenges["0default"]
   }
 
   return (
@@ -54,7 +54,7 @@ function GameView() {
   );
 }
 
-function getDate(date: Date = new Date()) {
+function dateToStr(date: Date = new Date()) {
   var yyyy: string = date.getFullYear() + ''
 
   var mm: string | number = date.getMonth() + 1

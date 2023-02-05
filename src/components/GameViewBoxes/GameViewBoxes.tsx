@@ -75,7 +75,7 @@ A current: '${current}'`,
     if (correct) return;
     if (input === "{enter}") {
       // TODO Replace with list from mapple-back
-      let countries: string[] = require("../../resource/countrylist.json").map(
+      let countries: string[] = require("../../resource/countryList.json").map(
         (country: string) => country.toUpperCase()
       );
 

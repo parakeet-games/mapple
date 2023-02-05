@@ -1,5 +1,5 @@
 {
-  "default": {
+  "0default": {
     "answer": "United States",
     "clues": [
       "The first modern democracy",
@@ -192,7 +192,7 @@
       "Name is derived from a continent's"
     ]
   },
-  "20230202": {
+  "20230205": {
     "answer": "Malta",
     "clues": [
       "Is an island, has no land borders",
