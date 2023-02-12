@@ -1,14 +1,31 @@
 # MAPPLE
 
+MAPPLE is a **geography guessing game** created by WriterArtistCoder for LeagueXP! Countries are sampled from the 195 UN-recognized countries, consisting of all UN members, Vatican City, and Palestine.
+
+Each day should ideally be randomly chosen, and repetition should be avoided for the first 195 days. From then on, repeating challenges from the last 30 days should be avoided.
+
+On days when no challenge has been prepared, MAPPLE currently falls back to a single default challenge. In the future, MAPPLE will fall back to a random previous challenge.
+
+## Glossary
+- Daily **challenges** appear on the site.
+- They each consist of one **country** and usually 5-7 **hints** (or **clues**).
+- The **player** (or **user**) takes an unlimited number of **guesses**, getting a hint with each guess until they run out.
+
+## Writing hints
+- Hints should avoid naming things specific to the country.
+- Hints should avoid painting the country in a negative light.
+
+## Setup
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 To run, type `yarn`
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+#### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -16,12 +33,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+#### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+#### `yarn build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -31,7 +48,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+#### `yarn eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -41,7 +58,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
