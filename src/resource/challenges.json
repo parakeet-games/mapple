@@ -203,7 +203,7 @@
       "Flag has primarily 2 colors"
     ]
   },
-  "20230212": {
+  "20230218": {
     "answer": "Chad",
     "clues": [
       "Independent in 1960",
@@ -214,7 +214,7 @@
       "Shares a name with a meme"
     ]
   },
-  "20230213": {
+  "20230219": {
     "answer": "Cameroon",
     "clues": [
       "Exports include cocoa and coffee",
@@ -225,7 +225,7 @@
       "Flag is green, red, and yellow with a star"
     ]
   },
-  "20230214": {
+  "20230220": {
     "answer": "Dominica",
     "clues": [
       "Located in the Carribean",
@@ -237,7 +237,7 @@
       "Name similar to that of a nearby country"
     ]
   },
-  "20230215": {
+  "20230221": {
     "answer": "Barbados",
     "clues": [
       "Located in the Carribean",
@@ -248,7 +248,7 @@
       "Flag has a trident"
     ]
   },
-  "20230216": {
+  "20230222": {
     "answer": "South Sudan",
     "clues": [
       "Flag includes red, black, and green",
@@ -258,7 +258,7 @@
       "Newest country in the world"
     ]
   },
-  "20230217": {
+  "20230223": {
     "answer": "Qatar",
     "clues": [
       "Often ranked as safest by the Numbeo Crime Index",
@@ -268,7 +268,7 @@
       "Recently held the World Cup"
     ]
   },
-  "20230218": {
+  "20230224": {
     "answer": "Paraguay",
     "clues": [
       "Gained indepdence in 1811",
@@ -277,6 +277,17 @@
       "Has the world’s largest water reserve",
       "Official languages are Spanish and Guaraní",
       "Flag is red, white, and blue with a seal"
+    ]
+  },
+  "20230225": {
+    "answer": "Trinidad and Tobago",
+    "clues": [
+      "Gained indepndence in 1962",
+      "No land borders",
+      "Created the limbo dance",
+      "Located in the Carribean",
+      "Flag is red, white, and black",
+      "Name contains the word \"and\""
     ]
   }
 }

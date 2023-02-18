@@ -2,7 +2,9 @@
 
 MAPPLE is a **geography guessing game** created by WriterArtistCoder for LeagueXP! Countries are sampled from the 195 UN-recognized countries, consisting of all UN members, Vatican City, and Palestine.
 
-Each day should ideally be randomly chosen, and repetition should be avoided for the first 195 days. From then on, repeating challenges from the last 30 days should be avoided.
+Dates are written in the YYYYMMDD or MM/DD format.
+
+Each day should ideally be randomly chosen, and repetition should be avoided for the first 195 challenges (note that some days have no challenges). From then on, repeating challenges from the last 30 should be avoided.
 
 On days when no challenge has been prepared, MAPPLE currently falls back to a single default challenge. In the future, MAPPLE will fall back to a random previous challenge.
 
@@ -14,6 +16,9 @@ On days when no challenge has been prepared, MAPPLE currently falls back to a si
 ## Writing hints
 - Hints should avoid naming things specific to the country.
 - Hints should avoid painting the country in a negative light.
+
+## Notes
+- The 2/18 - 2/24 challenges were originally supposed to be for 2/12 - 2/18. But MAPPLE was having issues and falling back on the default challenge instead during that period and possibly before. So on 2/18, those challenges were moved six days forward.
 
 ## Setup
 
