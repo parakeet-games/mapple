@@ -8,6 +8,9 @@ Each day should ideally be randomly chosen, and repetition should be avoided for
 
 On days when no challenge has been prepared, MAPPLE currently falls back to a single default challenge. In the future, MAPPLE will fall back to a random previous challenge.
 
+## npm run addc
+Use `npm run addc` to quickly append new countries to `challenges.json`.
+
 ## Glossary
 - Daily **challenges** appear on the site.
 - They each consist of one **country** and usually 5-7 **hints** (or **clues**).

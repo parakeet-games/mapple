@@ -34,14 +34,14 @@ for (var i = 0; i < chalDates.length; i++) {
     }
 }
 
-console.log(`Most recent challenge:\n#${chalDates.length} - ${chalDates[chalDates.length-1]} - ${chalAnswers[chalDates.length-1]}`)
+console.log(`Most recent challenge (may be in future):\n#${chalDates.length} - ${chalDates[chalDates.length-1]} - ${chalAnswers[chalDates.length-1]}`)
 
 const readline = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-readline.question('\nHow many countries? ', num => {
+readline.question('\nHow many countries do you want to add? ', num => {
     let date = latestDate
     chalcrop += '}'
 
@@ -64,7 +64,7 @@ readline.question('\nHow many countries? ', num => {
     let chaltxt = fs.readFileSync('./src/resource/challenges.json').toString();
     fs.writeFileSync('./src/resource/challenges.json', chalcrop, {flag:'rs+'});
 
-    console.log(`\nDONE: ${num} new countries added to challenges.json`)
+    console.log(`\nDONE: ${num} random countries added to challenges.json`)
     if (over195) {
         console.log(`No conflicts with previous 30 challenges (${chalDates[chalDates.length-30]} - ${chalDates[chalDates.length-1]})`)
     } else {
