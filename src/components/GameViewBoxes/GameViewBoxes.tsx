@@ -2,8 +2,10 @@ import useEventListener from "@use-it/event-listener";
 import { useState } from "react";
 import "../../GameView.css";
 import { GameViewGuess } from "../GameViewGuess/GameViewGuess";
-import GameViewHint from "../GameViewHint/GameViewHint";
 import { MappleKeyboard } from "../MappleKeyboard/MappleKeyboard";
+
+import GameViewHint from "../GameViewHint/GameViewHint";
+import countryList from "../../resource/countryList.json";
 
 const conly = false; // Flag for only accepting countries
 const logging = true; // Flag for GameViewBoxes logging
@@ -75,7 +77,7 @@ A current: '${current}'`,
     if (correct) return;
     if (input === "{enter}") {
       // TODO Replace with list from mapple-back
-      let countries: string[] = require("../../resource/countryList.json").map(
+      let countries: string[] = countryList.map(
         (country: string) => country.toUpperCase()
       );
 
