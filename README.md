@@ -8,7 +8,6 @@ Each day should ideally be randomly chosen, and repetition should be avoided for
 
 On days when no challenge has been prepared, MAPPLE currently falls back to a single default challenge. In the future, MAPPLE will fall back to a random previous challenge.
 
-## npm run addc
 Use `npm run addc` to quickly append new countries to `challenges.json`.
 
 ## Glossary
@@ -16,9 +15,15 @@ Use `npm run addc` to quickly append new countries to `challenges.json`.
 - They each consist of one **country** and usually 5-7 **hints** (or **clues**).
 - The **player** (or **user**) takes an unlimited number of **guesses**, getting a hint with each guess until they run out.
 
-## Writing hints
-- Hints should avoid naming things specific to the country.
-- Hints should avoid painting the country in a negative light.
+## Style guide
+- Pick from one of the 195 countries recognized by the UN. Pick randomly when possible.
+  - These are the 193 UN members, and Palestine and Vatican City.
+- There should be about six hints per country.
+- Hints should avoid naming things specific to the country, such as landmarks, early on.
+- Hints should be written in a neutral and sensitive way.
+  - Hints should avoid painting the country in a negative light.
+  - Avoid refererencing *current* wars, controversies, or conflicts.
+  - Controversial countries should not be avoided, but extra caution should be taken to remain neutral.
 
 ## Notes
 - The 2/18 (Chad) - 2/24 (Paraguay) challenges were originally supposed to be for 2/12 - 2/18. But MAPPLE was having issues and falling back on the default challenge instead during that period and possibly before. So on 2022-02-18, those challenges were moved six days forward to 2/18 - 2/24, and an eighth challenge was added for 2/25 (Trinidad and Tobago).
