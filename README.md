@@ -18,7 +18,8 @@ On days when no challenge has been prepared, MAPPLE currently falls back to a si
 - Hints should avoid painting the country in a negative light.
 
 ## Notes
-- The 2/18 - 2/24 challenges were originally supposed to be for 2/12 - 2/18. But MAPPLE was having issues and falling back on the default challenge instead during that period and possibly before. So on 2/18, those challenges were moved six days forward.
+- The 2/18 (Chad) - 2/24 (Paraguay) challenges were originally supposed to be for 2/12 - 2/18. But MAPPLE was having issues and falling back on the default challenge instead during that period and possibly before. So on 2022-02-18, those challenges were moved six days forward to 2/18 - 2/24, and an eighth challenge was added for 2/25 (Trinidad and Tobago).
+  - As of 2022-02-18, MAPPLE continues to have those issues, so the 2/18 (Chad) - 2/25 (Trinidad and Tobago) challenges will be postponed indefinitely and reused at a later date.
 
 ## Setup
 
