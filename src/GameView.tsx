@@ -3,7 +3,7 @@ import "./GameView.css";
 
 import { GameViewBoxes } from "./components/GameViewBoxes/GameViewBoxes";
 import { ReactComponent as Continents } from "./resource/continentsMap.svg";
-import challenges from './resource/challenges.json'
+import challenges from './challenges.json'
 
 
 function GameView() {
@@ -16,11 +16,16 @@ function GameView() {
   const [current, setCurrent] = useState("");
 
   var challenge: any;
+  const dts = dateToStr();
   // @ts-ignore
-  challenge = challenges[dateToStr()];
+  challenge = challenges[dts];
 
   if (challenge === undefined) {
     challenge = challenges["0default"]
+    console.log('No challenge for today')
+    console.log('Falling back on DEFAULT CHALLENGE')
+  } else {
+    console.log('Challenge found for today, '+dts)
   }
 
   return (

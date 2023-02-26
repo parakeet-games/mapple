@@ -8,7 +8,7 @@ import GameViewHint from "../GameViewHint/GameViewHint";
 import countryList from "../../resource/countryList.json";
 
 const conly = false; // Flag for only accepting countries
-const logging = true; // Flag for GameViewBoxes logging
+const mkbLogging = false; // Flag for MappleKeyboard logging
 const nac = "Not a country.";
 interface GameViewBoxesProps {
   current: string;
@@ -65,7 +65,7 @@ export const GameViewBoxes = ({
   });
 
   const checkInput = (input: string | null, mode: string | null) => {
-    if (logging)
+    if (mkbLogging)
       console.log(
         `%c
 A input:   '${input}'
@@ -83,7 +83,6 @@ A current: '${current}'`,
 
       if (current === answer.toLowerCase()) {
         setCorrect(true);
-        console.log('we got em')
       } else if (countries.includes(current.toUpperCase()) || !conly) {
         setGuesses([current, ...guesses]);
         setCurrent("");
@@ -125,7 +124,7 @@ A current: '${current}'`,
       }
     }
 
-    if (logging)
+    if (mkbLogging)
       console.log(`
 B input:   '${input}'
 B mode:    '${mode}'
