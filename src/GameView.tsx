@@ -3,7 +3,7 @@ import "./GameView.css";
 
 import { GameViewBoxes } from "./components/GameViewBoxes/GameViewBoxes";
 import { ReactComponent as Continents } from "./resource/continentsMap.svg";
-import challenges from './challenges.json'
+import challenges from './resource/challenges.json'
 
 
 function GameView() {

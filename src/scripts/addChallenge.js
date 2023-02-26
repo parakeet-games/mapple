@@ -1,10 +1,10 @@
 // `npm run addc` runs this script
-const chaljson = require('../challenges.json')
+const chaljson = require('../resource/challenges.json')
 const countries = require('../resource/countryList.json')
 
 const fs = require('fs');
 
-let chaltxt = fs.readFileSync('./src/challenges.json').toString();
+let chaltxt = fs.readFileSync('./src/resource/challenges.json').toString();
 let chalcrop = chaltxt.replace(/([\s\S]+)}\s*}\s*/, '$1') // Crop off final closing bracket and whitespace
 
 let indexes = []
@@ -61,8 +61,8 @@ readline.question('\nHow many countries do you want to add? ', num => {
     }
     chalcrop += '\n}'
 
-    let chaltxt = fs.readFileSync('./src/challenges.json').toString();
-    fs.writeFileSync('./src/challenges.json', chalcrop, {flag:'rs+'});
+    let chaltxt = fs.readFileSync('./src/resource/challenges.json').toString();
+    fs.writeFileSync('./src/resource/challenges.json', chalcrop, {flag:'rs+'});
 
     console.log(`\nDONE: ${num} random countries added to challenges.json`)
     if (over195) {
