@@ -5,7 +5,7 @@ import { GameViewGuess } from "../GameViewGuess/GameViewGuess";
 import { MappleKeyboard } from "../MappleKeyboard/MappleKeyboard";
 
 import GameViewHint from "../GameViewHint/GameViewHint";
-import countryList from "../../resource/countryList.json";
+import countrylist from "../../resource/countrylist.json";
 
 const conly = false; // Flag for only accepting countries
 const mkbLogging = false; // Flag for MappleKeyboard logging
@@ -77,7 +77,7 @@ A current: '${current}'`,
     if (correct) return;
     if (input === "{enter}") {
       // TODO Replace with list from mapple-back
-      let countries: string[] = countryList.map(
+      let countries: string[] = countrylist.map(
         (country: string) => country.toUpperCase()
       );
 

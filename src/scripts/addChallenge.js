@@ -1,6 +1,6 @@
 // `npm run addc` runs this script
 const chaljson = require('../resource/challenges.json')
-const countries = require('../resource/countryList.json')
+const countries = require('../resource/countrylist.json')
 
 const fs = require('fs');
 
