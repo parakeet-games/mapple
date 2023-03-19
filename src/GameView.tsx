@@ -16,14 +16,28 @@ function GameView() {
   const [current, setCurrent] = useState("");
 
   var challenge: any;
-  const dts = dateToStr();
+  const dts : string = dateToStr();
   // @ts-ignore
   challenge = challenges[dts];
 
   if (challenge === undefined) {
-    challenge = challenges["0default"]
+    // Relies on the fact that all objects are valid chaljson
+    // except for the first, "0default", the default challenge
+
+    // REPLACE RANDOM NUMBER WITH SEED FROM DATE
+    // SO THAT EVERYONE GETS THE SAME CHALLENGE ON THAT DATE
+    
+    // ALSO ITS CURRENTLY CHOOSING A NEW COUNTRY WITH EVERY KEY PRESS
+    let chalDates = Object.keys(challenges).sort();
+    chalDates.splice(0, 1); // Removes "0default"
+
+    const randate : string = chalDates[randInt(0, chalDates.length-1)]
+    const chalAsAny = challenges as any
+
+    challenge = chalAsAny[randate]
+
     console.log('No challenge for today')
-    console.log('Falling back on DEFAULT CHALLENGE')
+    console.log('Falling back on random challenge: '+randate)
   } else {
     console.log('Challenge found for today, '+dts)
   }
@@ -70,6 +84,13 @@ function dateToStr(date: Date = new Date()) {
 
 
   return `${yyyy}${mm}${dd}`
+}
+
+// Inclusive
+function randInt(min : number, max : number) {
+  min = Math.ceil(min);
+  max = Math.floor(max + 1);
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
 export default GameView;
