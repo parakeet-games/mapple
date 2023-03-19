@@ -49,13 +49,15 @@ function GameView() {
           width: "100vw",
           height: "100vh",
           position: "fixed",
-          opacity: 0.2,
+          opacity: 0.3,
           zIndex: -10000,
+          top: 0,
+          left: 0
         }}
       />
       <div className="GameView">
         <header className="GameView-header">
-          <h1>MAPPLE</h1>
+          <h1 style={{ color: 'white' }}>MAPPLE</h1>
           {/* <p>A geography guessing game! Guess any country to get started.
             All 195 countries with UN recognition, including the non-members of Palestine and Vatican City, are valid.
             This game is still in its development stages!</p> */}

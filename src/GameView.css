@@ -43,6 +43,11 @@
 
 /* Mapple Keyboard */
 
+.simple-keyboard.hg-layout-default .hg-button {
+	background-color: var(--hintfg);
+    color: var(--hintbg);
+} 
+
 .simple-keyboard.hg-layout-default .hg-button.mk-enter {
 	background-color: #0ca0ff;
     color: white;
@@ -58,4 +63,22 @@
 
 .simple-keyboard.hg-layout-default .hg-button.mk-space {
 	background-color: #d9f4ff;
+}
+
+.simple-keyboard * {
+    font-family: 'Lexend', sans-serif !important;
+    font-weight: normal !important;
+}
+
+.hg-button {
+    box-shadow: none !important;
+    border-bottom: none;
+    border: 0.18rem solid #d7d7f1 !important;
+    border-radius: 0.7rem !important;
+    margin: 0.01rem;
+}
+
+.simple-keyboard {
+    background: transparent !important;
+    margin-bottom: 1.3rem;
 }
