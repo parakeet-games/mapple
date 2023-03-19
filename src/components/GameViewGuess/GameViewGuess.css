@@ -31,8 +31,9 @@
     padding: 1.25rem;
     margin: 1.5rem auto;
     box-sizing: border-box;
-    height: 6rem;
+    min-height: 6rem;
     font-family: Lexend, sans-serif;
+    overflow: hidden;
 }
 
 .GameView-box:focus {

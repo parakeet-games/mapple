@@ -4,6 +4,7 @@ body {
     font-family: Lexend, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* background-color: #1b3d65; */
     background-color: white;
 }
 
@@ -19,8 +20,8 @@ code {
     --guessfg-guess: #2984a8;
     --guessfg-guessfocus: #229dce;
     
-    --hintbg: #345eab36;
-    --hintfg: #446cb5;
+    --hintbg: #6F6FFF;
+    --hintfg: #ffffff;
 }
 
 h1 {
