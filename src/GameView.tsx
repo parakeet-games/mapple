@@ -31,12 +31,13 @@ function GameView() {
     let chalDates = Object.keys(challenges).sort();
     chalDates.splice(0, 1); // Removes "0default"
 
+    1a767a2    const randate : string = chalDates[randInt(0, chalDates.length-1)]
     const chalAsAny = challenges as any
 
-    challenge = chalAsAny['0default']
+    challenge = chalAsAny[randate]
 
     console.log('No challenge for today')
-    console.log('Falling back on default challenge')
+    console.log('Falling back on random challenge: '+randate)
   } else {
     console.log('Challenge found for today, '+dts)
   }
@@ -48,15 +49,13 @@ function GameView() {
           width: "100vw",
           height: "100vh",
           position: "fixed",
-          opacity: 0.3,
+          opacity: 0.2,
           zIndex: -10000,
-          top: 0,
-          left: 0
         }}
       />
       <div className="GameView">
         <header className="GameView-header">
-          <h1 style={{ color: 'white' }}>MAPPLE</h1>
+          <h1>MAPPLE</h1>
           {/* <p>A geography guessing game! Guess any country to get started.
             All 195 countries with UN recognition, including the non-members of Palestine and Vatican City, are valid.
             This game is still in its development stages!</p> */}

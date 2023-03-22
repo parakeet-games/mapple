@@ -4,12 +4,15 @@ body {
     font-family: Lexend, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--bg);
+    /* background-color: #1b3d65; */
+    background-color: white;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 :root {
-    --bg: #243e58;
-
     --guessbg-yes: #0070f0;
     --guessfg-yes: #fff;
     --guessbg-no: #b5cfe8;
@@ -17,11 +20,8 @@ body {
     --guessfg-guess: #2984a8;
     --guessfg-guessfocus: #229dce;
     
-    --hintbg: #3e3e61;
-    --hintfg: #e3e3f4;
-
-
-    --keybd: #507191;
+    --hintbg: #6F6FFF;
+    --hintfg: #ffffff;
 }
 
 h1 {
