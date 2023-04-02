@@ -31,7 +31,7 @@ function GameView() {
     let chalDates = Object.keys(challenges).sort();
     chalDates.splice(0, 1); // Removes "0default"
 
-    1a767a2    const randate : string = chalDates[randInt(0, chalDates.length-1)]
+    const randate : string = chalDates[randInt(0, chalDates.length-1)]
     const chalAsAny = challenges as any
 
     challenge = chalAsAny[randate]
