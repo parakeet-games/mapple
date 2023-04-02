@@ -31,13 +31,13 @@ function GameView() {
     let chalDates = Object.keys(challenges).sort();
     chalDates.splice(0, 1); // Removes "0default"
 
-    const randate : string = chalDates[randInt(0, chalDates.length-1)]
+    // const randate : string = chalDates[randInt(0, chalDates.length-1)]
     const chalAsAny = challenges as any
 
-    challenge = chalAsAny[randate]
+    challenge = chalAsAny['0default']
 
     console.log('No challenge for today')
-    console.log('Falling back on random challenge: '+randate)
+    console.log('Falling back on default challenge')
   } else {
     console.log('Challenge found for today, '+dts)
   }
@@ -87,10 +87,10 @@ function dateToStr(date: Date = new Date()) {
 }
 
 // Inclusive
-function randInt(min : number, max : number) {
-  min = Math.ceil(min);
-  max = Math.floor(max + 1);
-  return Math.floor(Math.random() * (max - min) + min);
-}
+// function randInt(min : number, max : number) {
+//   min = Math.ceil(min);
+//   max = Math.floor(max + 1);
+//   return Math.floor(Math.random() * (max - min) + min);
+// }
 
 export default GameView;
