@@ -98,12 +98,14 @@ function randInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+// Convert Date object to YYYYMMDD string
 function dateToStr(date) {
     // Uses France (Canada) as locale because it uses YYYY-MM-DD
     // Uses America/Los_Angeles because MAPPLE is Pacific Time
     return date.toLocaleDateString( 'fr-CA', { 'timeZone': 'America/Los_Angeles' }).replace(/-/g, '')
 }
 
+// Convert YYYYMMDD string to Date object
 function strToDate(str) {
     return new Date(str.replace(/(\d\d\d\d)(\d\d)(\d\d)/, '$1/$2/$3'))
 }
