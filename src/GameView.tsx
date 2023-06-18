@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./GameView.css";
 
 import { GameViewBoxes } from "./components/GameViewBoxes/GameViewBoxes";
@@ -12,6 +12,12 @@ function GameView() {
   const updateGss = (newGuesses: string[]) => {
     setGuesses(newGuesses);
   };
+
+  useEffect(() => {
+    document.addEventListener('keypress', (e) => {
+      e.preventDefault()
+    })
+  })
 
   const [current, setCurrent] = useState("");
 
