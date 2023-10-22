@@ -490,11 +490,19 @@
       "Landlocked country in West Africa",
       "Has been inhabited since 10,000 BC",
       "Had the richest man who ever lived",
-      "Largest mud structure in the world"
+      "Largest mud structure in the world",
+      "This country was colonized by France in 1898 and named French Sudan",
+      "Has the world's fourth-highest fertility rate at 5.9"
      ]
   },
   "20231028": {
      "answer": "Ghana",
-     "clues": []
+     "clues": [
+      "Coastal country in West Africa",
+      "In 1957 this country became the first sub-Saharan country to gain independence from colonial rule",
+      "Flag is tricolor of yellow, red and green with a black star",
+      "Is the second most peaceful country in Africa",
+      "Akan is the second most popularly used language in this country"
+     ]
   }
 }
