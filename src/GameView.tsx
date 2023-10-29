@@ -4,6 +4,7 @@ import "./GameView.css";
 import { GameViewBoxes } from "./components/GameViewBoxes/GameViewBoxes";
 import { ReactComponent as Continents } from "./resource/continentsMap.svg";
 import challenges from './resource/challenges.json'
+import fallbacks from './resource/fallbacks.json'
 
 
 function GameView() {
@@ -26,14 +27,12 @@ function GameView() {
   // @ts-ignore
   challenge = challenges[dts];
 
-  if (challenge === undefined) {
-    // Relies on the fact that all objects are valid chaljson
-    // except for the first, "0default", the default challenge
-
-    // REPLACE RANDOM NUMBER WITH SEED FROM DATE
-    // SO THAT EVERYONE GETS THE SAME CHALLENGE ON THAT DATE
+  if (challenge === undefined || challenge.clues.length == 0) { // If challenge does not exist or has no clues
     
-    // ALSO ITS CURRENTLY CHOOSING A NEW COUNTRY WITH EVERY KEY PRESS
+    let today = Math.floor(Date.now() / 24 / 60 / 60); // Get date as a number
+    let index = today % Object.keys(fallbacks).length // Convert to an index in fallbacks
+    console.log(fallbacks[index])
+
     let chalDates = Object.keys(challenges).sort();
     chalDates.splice(0, 1); // Removes "0default"
 

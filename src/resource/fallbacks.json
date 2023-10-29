@@ -1,5 +1,5 @@
-{
-  "20221211": {
+[
+    {
     "answer": "United States",
     "clues": [
       "among first democracies",
@@ -9,7 +9,7 @@
       "considered a superpower"
     ]
   },
-  "20221212": {
+  {
     "answer": "Iran",
     "clues": [
       "2nd largest proved gas reserves",
@@ -20,7 +20,7 @@
       "Formerly known as Persia"
     ]
   },
-  "20221218": {
+  {
     "answer": "Kenya",
     "clues": [
       "Currency is the shilling",
@@ -30,7 +30,7 @@
       "Flag is black, red, green, and white"
     ]
   },
-  "20221226": {
+  {
     "answer": "Tunisia",
     "clues": [
       "Slightly larger in area than Georgia (the state)",
@@ -40,7 +40,7 @@
       "Flag is red and white."
     ]
   },
-  "20230102": {
+  {
     "answer": "Philippines",
     "clues": [
       "Collection of islands with a tropical marine climate.",
@@ -50,7 +50,7 @@
       "Flag is red, blue, and white"
     ]
   },
-  "20230108": {
+  {
     "answer": "Egypt",
     "clues": [
       "This country is located in the northeastern region of Africa.",
@@ -60,7 +60,7 @@
       "It is home to some of the oldest and most famous pyramids in the world."
     ]
   },
-  "20230118": {
+  {
     "answer": "Oman",
     "clues": [
       "Located in the Middle East",
@@ -71,7 +71,7 @@
       "Former Portugese colony, became independent in 1650"
     ]
   },
-  "20230119": {
+  {
     "answer": "Uruguay",
     "clues": [
       "Located in the South America",
@@ -83,7 +83,7 @@
       "Former Spanish colony, became independent in 1828"
     ]
   },
-  "20230122": {
+  {
     "answer": "New Zealand",
     "clues": [
       "Located in the South Pacific Ocean",
@@ -95,7 +95,7 @@
       "Former British colony, became independent in 1907"
     ]
   },
-  "20230123": {
+  {
     "answer": "Somalia",
     "clues": [
       "Located in Eastern Africa, near Ethiopia",
@@ -105,7 +105,7 @@
       "The longest coastline in mainland Africa"
     ]
   },
-  "20230124": {
+  {
     "answer": "Montenegro",
     "clues": [
       "Located in the Balkans in Europe",
@@ -116,7 +116,7 @@
       "Flag is red with a two-headed bird"
     ]
   },
-  "20230125": {
+  {
     "answer": "Botswana",
     "clues": [
       "Located in Southern Africa",
@@ -127,7 +127,7 @@
       "Flag is predominantly blue, with white and black"
     ]
   },
-  "20230126": {
+  {
     "answer": "Nigeria",
     "clues": [
       "Largest population in Africa",
@@ -138,7 +138,7 @@
       "Flag is green and white"
     ]
   },
-  "20230127": {
+  {
     "answer": "Latvia",
     "clues": [
       "Third of population lives in capital",
@@ -149,7 +149,7 @@
       "Flag is red and white"
     ]
   },
-  "20230130": {
+  {
     "answer": "Germany",
     "clues": [
       "In top 2 most populous in its continent",
@@ -159,7 +159,7 @@
       "Flag has three horizontal stripes"
     ]
   },
-  "20230131": {
+  {
     "answer": "Venezuela",
     "clues": [
       "Borders 3 countries",
@@ -171,7 +171,7 @@
       "Celebrates Christmas with roller skating"
     ]
   },
-  "20230201": {
+  {
     "answer": "South Africa",
     "clues": [
       "Surrounds another country",
@@ -182,7 +182,7 @@
       "Name is derived from a continent's"
     ]
   },
-  "20230205": {
+  {
     "answer": "Malta",
     "clues": [
       "Is an island, has no land borders",
@@ -193,7 +193,7 @@
       "Flag has primarily 2 colors"
     ]
   },
-  "20230312": {
+  {
     "answer": "Chad",
     "clues": [
       "Independent in 1960",
@@ -204,7 +204,7 @@
       "Shares a name with a meme"
     ]
   },
-  "20230313": {
+  {
     "answer": "Cameroon",
     "clues": [
       "Exports include cocoa and coffee",
@@ -215,7 +215,7 @@
       "Flag is green, red, and yellow with a star"
     ]
   },
-  "20230314": {
+  {
     "answer": "Dominica",
     "clues": [
       "Located in the Carribean",
@@ -227,7 +227,7 @@
       "Name similar to that of a nearby country"
     ]
   },
-  "20230315": {
+  {
     "answer": "Barbados",
     "clues": [
       "Located in the Carribean",
@@ -238,7 +238,7 @@
       "Flag has a trident"
     ]
   },
-  "20230316": {
+  {
     "answer": "South Sudan",
     "clues": [
       "Flag includes red, black, and green",
@@ -248,7 +248,7 @@
       "Newest country in the world"
     ]
   },
-  "20230317": {
+  {
     "answer": "Qatar",
     "clues": [
       "Often ranked as safest by the Numbeo Crime Index",
@@ -258,7 +258,7 @@
       "Recently held the World Cup"
     ]
   },
-  "20230318": {
+  {
     "answer": "Paraguay",
     "clues": [
       "Gained indepdence in 1811",
@@ -269,7 +269,7 @@
       "Flag is red, white, and blue with a seal"
     ]
   },
-  "20230319": {
+  {
     "answer": "Trinidad and Tobago",
     "clues": [
       "Gained indepndence in 1962",
@@ -280,7 +280,7 @@
       "Name contains the word \"and\""
     ]
   },
-  "20231008": {
+  {
     "answer": "Iran",
     "clues": [
       "2nd largest proved gas reserves",
@@ -291,7 +291,7 @@
       "Formerly known as Persia"
     ]
   },
-  "20231009": {
+  {
     "answer": "Kenya",
     "clues": [
       "Currency is the shilling",
@@ -301,7 +301,7 @@
       "Flag is black, red, green, and white"
     ]
   },
-  "20231010": {
+  {
     "answer": "Tunisia",
     "clues": [
       "Slightly larger in area than Georgia (the state)",
@@ -311,7 +311,7 @@
       "Flag is red and white."
     ]
   },
-  "20231011": {
+  {
     "answer": "Philippines",
     "clues": [
       "Collection of islands with a tropical marine climate.",
@@ -321,7 +321,7 @@
       "Flag is red, blue, and white"
     ]
   },
-  "20231012": {
+  {
     "answer": "Egypt",
     "clues": [
       "This country is located in the northeastern region of Africa.",
@@ -331,7 +331,7 @@
       "It is home to some of the oldest and most famous pyramids in the world."
     ]
   },
-  "20231013": {
+  {
     "answer": "Oman",
     "clues": [
       "Located in the Middle East",
@@ -342,7 +342,7 @@
       "Former Portugese colony, became independent in 1650"
     ]
   },
-  "20231014": {
+  {
     "answer": "Uruguay",
     "clues": [
       "Located in the South America",
@@ -354,7 +354,7 @@
       "Former Spanish colony, became independent in 1828"
     ]
   },
-  "20231015": {
+  {
      "answer": "Cape Verde",
      "clues": [
       "Population under 1 million",
@@ -364,7 +364,7 @@
       "Flag has a circle of stars"
      ]
   },
-  "20231016": {
+  {
      "answer": "Laos",
      "clues": [
       "Landlocked, bordered by 5 countries",
@@ -374,7 +374,7 @@
       "Flag is red, white, and blue"
      ]
   },
-  "20231017": {
+  {
      "answer": "Czechia",
      "clues": [
       "Globally ranked as one of the safest countries",
@@ -385,7 +385,7 @@
       "Was a larger country that split in two in 1992"
      ]
   },
-  "20231018": {
+  {
      "answer": "Central African Republic",
      "clues": [
       "Landlocked by 6 countries",
@@ -396,7 +396,7 @@
       "Flag is blue, white, green, yellow, and red"
      ]
   },
-  "20231019": {
+  {
      "answer": "Guyana",
      "clues": [
       "Name means 'land of water'",
@@ -407,7 +407,7 @@
       "Located in northern South America"
      ]
   },
-  "20231020": {
+  {
      "answer": "Gabon",
      "clues": [
       "88% covered by rainforest",
@@ -417,7 +417,7 @@
       "Flag is green, yellow, and blue"
      ]
   },
-  "20231021": {
+  {
      "answer": "Armenia",
      "clues": [
       "Landlocked by 4 countries",
@@ -427,47 +427,5 @@
       "Located between Europe and Asia",
       "Flag is red, blue, and orange"
      ]
-  },
-  "20231022": {
-     "answer": "Malawi",
-     "clues": [
-      "Name of country means \"flames\"",
-      "Population around 20 million",
-      "One-fifth of its area is occupied by a lake",
-      "Flag is black, red, and green",
-      "Located in southeast Africa",
-      "First country to produce tea in Africa"
-     ]
-  },
-  "20231105": {
-     "answer": "Israel",
-     "clues": [
-      "Has two official languages",
-      "Borders 6 countries"
-     ]
-  },
-  "20231106": {
-     "answer": "Russia",
-     "clues": []
-  },
-  "20231107": {
-     "answer": "Afghanistan",
-     "clues": []
-  },
-  "20231108": {
-     "answer": "Bahrain",
-     "clues": []
-  },
-  "20231109": {
-     "answer": "Mali",
-     "clues": []
-  },
-  "20231110": {
-     "answer": "Ghana",
-     "clues": []
-  },
-  "20231111": {
-     "answer": "Slovenia",
-     "clues": []
   }
-}
+]
