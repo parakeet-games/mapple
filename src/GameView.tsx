@@ -27,7 +27,7 @@ function GameView() {
   // @ts-ignore
   challenge = challenges[dts];
 
-  if (challenge === undefined || challenge.clues.length == 0) { // If challenge does not exist or has no clues
+  if (challenge === undefined || challenge.clues.length === 0) { // If challenge does not exist or has no clues
     
     let today = Math.floor(Date.now() / 24 / 60 / 60); // Get date as a number
     let index = today % Object.keys(fallbacks).length // Convert to an index in fallbacks
