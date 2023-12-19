@@ -33,13 +33,7 @@ function GameView() {
     let index = today % Object.keys(fallbacks).length // Convert to an index in fallbacks
     console.log(fallbacks[index])
 
-    let chalDates = Object.keys(challenges).sort();
-    chalDates.splice(0, 1); // Removes "0default"
-
-    // const randate : string = chalDates[randInt(0, chalDates.length-1)]
-    const chalAsAny = challenges as any
-
-    challenge = chalAsAny['0default']
+    challenge = fallbacks[index]
 
     console.log('No challenge for today')
     console.log('Falling back on default challenge')
