@@ -1,51 +1,52 @@
 import React, { useEffect, useState } from "react";
 import "./GameView.css";
-
 import { GameViewBoxes } from "./components/GameViewBoxes/GameViewBoxes";
 import { ReactComponent as Continents } from "./resource/continentsMap.svg";
 import challenges from './resource/challenges.json'
 import fallbacks from './resource/fallbacks.json'
 
-
 function GameView() {
-  console.log("%crerender GameView", "color: blue");
+  console.log("%cRe-rendering GameView", "color: yellow");
+  const [message, setMessage] = useState("")
   const [guesses, setGuesses] = useState<string[]>([]);
+  const [dts, setDts] = useState<any>()
   const updateGss = (newGuesses: string[]) => {
     setGuesses(newGuesses);
   };
+  const [current, setCurrent] = useState("");
 
   useEffect(() => {
     document.addEventListener('keypress', (e) => {
       e.preventDefault()
     })
-  })
+    const dtsCurrent : string = dateToStr();
+    setDts(dtsCurrent)
+  },[])
 
-  const [current, setCurrent] = useState("");
 
   var challenge: any;
-  const dts : string = dateToStr();
+  console.log('date to string:', dts)
+
   // @ts-ignore
   challenge = challenges[dts];
 
   if (challenge === undefined || challenge.clues.length == 0) { // If challenge does not exist or has no clues
-    
-    let today = Math.floor(Date.now() / 24 / 60 / 60); // Get date as a number
+    console.log("My body is made of ants")
+    let now   = Date.now()
+    let today = Math.floor(now / 24 / 60 / 60 / 1000); // Get date as a number
     let index = today % Object.keys(fallbacks).length // Convert to an index in fallbacks
-    console.log(fallbacks[index])
 
     let chalDates = Object.keys(challenges).sort();
-    chalDates.splice(0, 1); // Removes "0default"
 
     // const randate : string = chalDates[randInt(0, chalDates.length-1)]
-    const chalAsAny = challenges as any
+    challenge = fallbacks[index]
 
-    challenge = chalAsAny['0default']
-
-    console.log('No challenge for today')
-    console.log('Falling back on default challenge')
+    console.log("No challenge for today, converting today's date", dts, 'to challenge #'+index, 'in fallbacks')
   } else {
-    console.log('Challenge found for today, '+dts)
+    console.log('Challenge found for today,', dts+':')
+    console.log(challenge)
   }
+
 
   return (
     <>
@@ -60,7 +61,7 @@ function GameView() {
       />
       <div className="GameView">
         <header className="GameView-header">
-          <h1>MAPPLE</h1>
+          <h1>{message}</h1>
           {/* <p>A geography guessing game! Guess any country to get started.
             All 195 countries with UN recognition, including the non-members of Palestine and Vatican City, are valid.
             This game is still in its development stages!</p> */}
