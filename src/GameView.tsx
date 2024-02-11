@@ -37,8 +37,6 @@ function GameView() {
     let index = today % Object.keys(fallbacks).length // Convert to an index in fallbacks
 
     let chalDates = Object.keys(challenges).sort();
-
-    // const randate : string = chalDates[randInt(0, chalDates.length-1)]
     challenge = fallbacks[index]
 
     console.log("No challenge for today, converting today's date", dts, 'to challenge #'+index, 'in fallbacks')
